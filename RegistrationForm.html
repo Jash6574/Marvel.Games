@@ -247,14 +247,14 @@
             </div>
             <div class="form-group row">
               <div class="col-md-6">
-                <!-- <a href="index.html"> -->
-                <input
-                  type="submit"
-                  class="btn btn-primary py-3 px-5 btn-block"
-                  value="Submit"
-                  onclick="submitForm()"
-                />
-                <!-- </a> -->
+                <a href="index.html">
+                  <input
+                    type="submit"
+                    class="btn btn-primary py-3 px-5 btn-block"
+                    value="Submit"
+                    onclick="submitForm()"
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -264,30 +264,28 @@
 
     <script>
       async function submitForm() {
-        const schoolName = document.getElementById("schoolName").value;
-        const schoolAddress = document.getElementById("schoolAddress").value;
-        const principalName = document.getElementById("principalName").value;
-        const principalEmail = document.getElementById("principalEmail").value;
-        const principalPhone = document.getElementById("principalPhone").value;
+        const schoolName = document.getElementById("schoolName")?.value;
+        const schoolAddress = document.getElementById("schoolAddress")?.value;
+        const principalName = document.getElementById("principalName")?.value;
+        const principalEmail = document.getElementById("principalEmail")?.value;
+        const principalPhone = document.getElementById("principalPhone")?.value;
         const sportsCoordinatorName = document.getElementById(
           "sportsCoordinatorName"
-        ).value;
+        )?.value;
         const sportsCoordinatorEmail = document.getElementById(
           "sportsCoordinatorEmail"
-        ).value;
+        )?.value;
         const sportsCoordinatorPhone = document.getElementById(
           "sportsCoordinatorPhone"
-        ).value;
+        )?.value;
 
         // validation of the Data
 
         // sending Data
 
-        // console.log("hi Harxh!!!");
-
         const LINK = `https://docs.google.com/forms/d/e/1FAIpQLSeVMHft54njqFbLKRX9RUF23aLSZrOqrjM_d_uiofAi02xRwQ/formResponse?entry.1618788176=${schoolName}&entry.173044058=${schoolAddress}&entry.2053714165=${principalName}&entry.1685933095=${principalEmail}&entry.1043112883=${principalPhone}&entry.1182328480=${sportsCoordinatorName}&entry.62024287=${sportsCoordinatorEmail}&entry.1788531834=${sportsCoordinatorPhone}`;
         fetch(LINK, {
-          mode: "no-cors",
+          // mode: "no-cors",
         });
       }
     </script>
