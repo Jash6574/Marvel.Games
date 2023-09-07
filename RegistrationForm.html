@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Registration</title>
-  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet" />
-  <link rel="stylesheet" href="fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
 
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/jquery-ui.css" />
-  <link rel="stylesheet" href="css/owl.carousel.min.css" />
-  <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-  <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
 
-  <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
 
-  <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
 
-  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link
+      href="css/jquery.mb.YTPlayer.min.css"
+      media="all"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-  <link rel="stylesheet" href="css/aos.css" />
-  <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" />
 
-  <link rel="stylesheet" href="css/style.css" />
-
-  <!-- <style>
+    <!-- <style>
   .body{
     background: url("images/sports-tools.jpg");
  
@@ -33,95 +40,228 @@
   }
  
   </style> -->
-</head>
+  </head>
 
-<body>
-  <div class="site-section bg-light contact-wrap body" id="contact-section">
-    <div class="container">
-  <div class="row justify-content-center ">
-    <div class="col-md-7">
+  <body>
+    <style>
+      .form-warning {
+        color: tomato;
+        font-size: 0.9rem;
+        display: none;
+      }
+      .register-input-wrapper {
+        width: 100%;
+      }
+      .register-input-wrapper input {
+        border-radius: 4px !important;
+        padding: 1rem;
+        width: 100%;
+        border-color: rgba(0, 0, 0, 0.1);
+        box-shadow: rgba(17, 12, 46, 0.07) 0px 48px 100px 0px;
+      }
+      .register-input-wrapper > input:focus,
+      .register-input-wrapper > input:hover {
+        border-color: rgba(0, 0, 0, 0.5);
+      }
 
-      <div class="form-group row">
-        <div class="col-md-12">
-          <input type="text" class="form-control" required id="schoolName" placeholder="School name" name="entry.1618788176" />
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-12">
-          <input type="text" class="form-control" required id="schoolAddress" placeholder="School Address" name="entry.173044058" />
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-12">
-          <input type="text" class="form-control" required id="principalName" placeholder="Principal Name" name="entry.2053714165" />
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-12">
-          <input type="email" class="form-control" required id="principalEmail" placeholder="Principal Email" name="entry.1685933095" />
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-12">
-          <input type="phone" maxlength="10" minlength="10" class="form-control" required id="principalPhone" placeholder="Principal Phone" name="entry.1043112883" />
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-12">
-          <input type="text" class="form-control" required id="Sports CoordinatorName" placeholder="sportsCoordinator Name" name="entry.1182328480" />
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-12">
-          <input type="email" class="form-control" required id="sportsCoordinatorEmail" placeholder="Sports Coordinator Email" name="entry.62024287" />
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-12">
-          <input type="phone" class="form-control" required id="Sports CoordinatorPhone" placeholder="sportsCoordinator Phone" name="entry.1788531834" />
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-6">
+      .bg-wrapper {
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+      }
+      .bg-wrapper > img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+      }
+      .form-wrapper {
+        width: fit-content;
+        background: #fff;
+        min-width: 50vw;
+        margin-top: 200px;
+        padding: 2rem 0;
+        border-radius: 11px;
+        border: 2px solid rgba(0, 0, 0, 0.08);
+        /* box-shadow: rgba(17, 12, 46, 0.07) 0px 48px 100px 0px; */
+      }
+      .form-title {
+        padding-bottom: 1rem;
+        text-align: center;
+      }
+      @media (max-width: 600px) {
+        .form-wrapper {
+          padding: 1rem;
+          margin: 1rem;
+          margin-top: 150px;
+        }
+        h2 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
 
-          <a href="index.html"><input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Submit" onclick="submitForm()"></a>
+    <div class="site-section contact-wrap body" id="contact-section">
+      <div class="bg-wrapper">
+        <img src="/images/bg.jpg" alt="" />
+      </div>
+      <div class="container form-wrapper">
+        <div class="row justify-content-center">
+          <div class="col-md-11">
+            <div class="form-group row">
+              <div class="col-md-12 register-input-wrapper">
+                <div class="form-title">
+                  <h2>Register your School for the Sports day</h2>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  id="schoolName"
+                  placeholder="School name"
+                  name="entry.1618788176"
+                />
+                <p class="form-warning">Require</p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12 register-input-wrapper">
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  id="schoolAddress"
+                  placeholder="School Address"
+                  name="entry.173044058"
+                />
+                <p class="form-warning">Require</p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12 register-input-wrapper">
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  id="principalName"
+                  placeholder="Principal Name"
+                  name="entry.2053714165"
+                />
+                <p class="form-warning">Require</p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12 register-input-wrapper">
+                <input
+                  type="email"
+                  class="form-control"
+                  required
+                  id="principalEmail"
+                  placeholder="Principal Email"
+                  name="entry.1685933095"
+                />
+                <p class="form-warning">Require</p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12 register-input-wrapper">
+                <input
+                  type="phone"
+                  maxlength="10"
+                  minlength="10"
+                  class="form-control"
+                  required
+                  id="principalPhone"
+                  placeholder="Principal Phone"
+                  name="entry.1043112883"
+                />
+                <p class="form-warning">Require</p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12 register-input-wrapper">
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  id="Sports CoordinatorName"
+                  placeholder="sportsCoordinator Name"
+                  name="entry.1182328480"
+                />
+                <p class="form-warning">Require</p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12 register-input-wrapper">
+                <input
+                  type="email"
+                  class="form-control"
+                  required
+                  id="sportsCoordinatorEmail"
+                  placeholder="Sports Coordinator Email"
+                  name="entry.62024287"
+                />
+                <p class="form-warning">Require</p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-12 register-input-wrapper">
+                <input
+                  type="phone"
+                  class="form-control"
+                  required
+                  id="Sports CoordinatorPhone"
+                  placeholder="sportsCoordinator Phone"
+                  name="entry.1788531834"
+                />
+                <p class="form-warning">Require</p>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-6">
+                <a href="index.html"
+                  ><input
+                    type="submit"
+                    class="btn btn-primary py-3 px-5 btn-block"
+                    value="Submit"
+                    onclick="submitForm()"
+                /></a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div></div>
-</div>
 
-  <script>
-    async function submitForm() {
-      const schoolName = document.getElementById("schoolName").value;
-      const schoolAddress = document.getElementById("schoolAddress").value;
-      const principalName = document.getElementById("principalName").value;
-      const principalEmail = document.getElementById("principalEmail").value;
-      const principalPhone = document.getElementById("principalPhone").value;
-      const sportsCoordinatorName = document.getElementById(
-        "sportsCoordinatorName"
-      ).value;
-      const sportsCoordinatorEmail = document.getElementById(
-        "sportsCoordinatorEmail"
-      ).value;
-      const sportsCoordinatorPhone = document.getElementById(
-        "sportsCoordinatorPhone"
-      ).value;
+    <script>
+      async function submitForm() {
+        const schoolName = document.getElementById("schoolName").value;
+        const schoolAddress = document.getElementById("schoolAddress").value;
+        const principalName = document.getElementById("principalName").value;
+        const principalEmail = document.getElementById("principalEmail").value;
+        const principalPhone = document.getElementById("principalPhone").value;
+        const sportsCoordinatorName = document.getElementById(
+          "sportsCoordinatorName"
+        ).value;
+        const sportsCoordinatorEmail = document.getElementById(
+          "sportsCoordinatorEmail"
+        ).value;
+        const sportsCoordinatorPhone = document.getElementById(
+          "sportsCoordinatorPhone"
+        ).value;
 
-      // validation of the Data
+        // validation of the Data
 
-      // sending Data
+        // sending Data
 
-      // console.log("hi Harxh!!!");
+        // console.log("hi Harxh!!!");
 
-      const LINK = `https://docs.google.com/forms/d/e/1FAIpQLSeVMHft54njqFbLKRX9RUF23aLSZrOqrjM_d_uiofAi02xRwQ/formResponse?entry.1618788176=${schoolName}&entry.173044058=${schoolAddress}&entry.2053714165=${principalName}&entry.1685933095=${principalEmail}&entry.1043112883=${principalPhone}&entry.1182328480=${sportsCoordinatorName}&entry.62024287=${sportsCoordinatorEmail}&entry.1788531834=${sportsCoordinatorPhone}`;
-      fetch(LINK, {
-        mode: "no-cors",
-      });
-    }
-  </script>
-
-  
-</body>
-
+        const LINK = `https://docs.google.com/forms/d/e/1FAIpQLSeVMHft54njqFbLKRX9RUF23aLSZrOqrjM_d_uiofAi02xRwQ/formResponse?entry.1618788176=${schoolName}&entry.173044058=${schoolAddress}&entry.2053714165=${principalName}&entry.1685933095=${principalEmail}&entry.1043112883=${principalPhone}&entry.1182328480=${sportsCoordinatorName}&entry.62024287=${sportsCoordinatorEmail}&entry.1788531834=${sportsCoordinatorPhone}`;
+        fetch(LINK, {
+          mode: "no-cors",
+        });
+      }
+    </script>
+  </body>
 </html>
