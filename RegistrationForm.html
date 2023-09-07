@@ -90,6 +90,27 @@
         padding-bottom: 1rem;
         text-align: center;
       }
+
+      .btn {
+        background: rgb(81, 191, 81);
+        border: none;
+      }
+      .btn:hover {
+        background-color: rgb(69, 181, 69) !important;
+      }
+      .ppsu-logo {
+        position: absolute;
+        width: 250px;
+        height: auto;
+        top: 80px;
+        left: 50%;
+        transform: translate(-50%, -0%);
+      }
+
+      .ppsu-logo > img {
+        width: 100%;
+      }
+
       @media (max-width: 600px) {
         .form-wrapper {
           padding: 1rem;
@@ -99,10 +120,16 @@
         h2 {
           font-size: 1.5rem;
         }
+        .ppsu-logo {
+          width: 200px;
+        }
       }
     </style>
 
     <div class="site-section contact-wrap body" id="contact-section">
+      <div class="ppsu-logo">
+        <img src="images/PPSU White.png" alt="" />
+      </div>
       <div class="bg-wrapper">
         <img src="images/bg.jpg" alt="" />
       </div>
@@ -145,7 +172,7 @@
                   class="form-control"
                   required
                   id="principalName"
-                  placeholder="Principal Name"
+                  placeholder="Principal's Name"
                   name="entry.2053714165"
                 />
                 <p class="form-warning">Require</p>
@@ -158,7 +185,7 @@
                   class="form-control"
                   required
                   id="principalEmail"
-                  placeholder="Principal Email"
+                  placeholder="Principal's Email"
                   name="entry.1685933095"
                 />
                 <p class="form-warning">Require</p>
@@ -173,7 +200,7 @@
                   class="form-control"
                   required
                   id="principalPhone"
-                  placeholder="Principal Phone"
+                  placeholder="Principal's Mobile Number"
                   name="entry.1043112883"
                 />
                 <p class="form-warning">Require</p>
@@ -186,7 +213,7 @@
                   class="form-control"
                   required
                   id="Sports CoordinatorName"
-                  placeholder="sportsCoordinator Name"
+                  placeholder="Sports Coordinator's Name"
                   name="entry.1182328480"
                 />
                 <p class="form-warning">Require</p>
@@ -199,7 +226,7 @@
                   class="form-control"
                   required
                   id="sportsCoordinatorEmail"
-                  placeholder="Sports Coordinator Email"
+                  placeholder="Sports Coordinator's Email"
                   name="entry.62024287"
                 />
                 <p class="form-warning">Require</p>
@@ -212,7 +239,7 @@
                   class="form-control"
                   required
                   id="Sports CoordinatorPhone"
-                  placeholder="sportsCoordinator Phone"
+                  placeholder="Sports Coordinator's Mobile Number"
                   name="entry.1788531834"
                 />
                 <p class="form-warning">Require</p>
@@ -220,13 +247,14 @@
             </div>
             <div class="form-group row">
               <div class="col-md-6">
-                <a href="index.html"
-                  ><input
+                <a href="index.html">
+                  <input
                     type="submit"
                     class="btn btn-primary py-3 px-5 btn-block"
                     value="Submit"
                     onclick="submitForm()"
-                /></a>
+                  />
+                </a>
               </div>
             </div>
           </div>
