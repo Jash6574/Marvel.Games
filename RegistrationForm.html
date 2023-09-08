@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration</title>
+
+    <link rel="shortcut icon" href="ftco-32x32.png" />
+
     <link
       href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900"
       rel="stylesheet"
@@ -13,7 +16,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/jquery-ui.css" />
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
 
     <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
@@ -57,7 +59,7 @@
         padding: 1rem;
         width: 100%;
         border-color: rgba(0, 0, 0, 0.1);
-        box-shadow: rgba(17, 12, 46, 0.07) 0px 48px 100px 0px;
+        /* box-shadow: rgba(17, 12, 46, 0.07) 0px 48px 100px 0px; */
       }
       .register-input-wrapper > input:focus,
       .register-input-wrapper > input:hover {
@@ -76,15 +78,27 @@
         height: 100vh;
         object-fit: cover;
       }
+      .bg-wrapper::before {
+        width: 100%;
+        height: 100%;
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 10;
+      }
       .form-wrapper {
         width: fit-content;
         background: #fff;
         min-width: 50vw;
         margin-top: 200px;
         padding: 2rem 0;
+        padding-bottom: 1.5rem;
         border-radius: 11px;
         border: 2px solid rgba(0, 0, 0, 0.08);
-        /* box-shadow: rgba(17, 12, 46, 0.07) 0px 48px 100px 0px; */
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
       }
       .form-title {
         padding-bottom: 1rem;
@@ -116,6 +130,8 @@
           padding: 1rem;
           margin: 1rem;
           margin-top: 150px;
+
+          padding-bottom: 0;
         }
         h2 {
           font-size: 1.5rem;
@@ -149,7 +165,7 @@
                   placeholder="School name"
                   name="entry.1618788176"
                 />
-                <p class="form-warning">Require</p>
+                <p class="form-warning" id="schNameId">Require</p>
               </div>
             </div>
             <div class="form-group row">
@@ -162,7 +178,7 @@
                   placeholder="School Address"
                   name="entry.173044058"
                 />
-                <p class="form-warning">Require</p>
+                <p class="form-warning" id="schAddId">Require</p>
               </div>
             </div>
             <div class="form-group row">
@@ -175,7 +191,7 @@
                   placeholder="Principal's Name"
                   name="entry.2053714165"
                 />
-                <p class="form-warning">Require</p>
+                <p class="form-warning" id="priNameId">Require</p>
               </div>
             </div>
             <div class="form-group row">
@@ -188,7 +204,7 @@
                   placeholder="Principal's Email"
                   name="entry.1685933095"
                 />
-                <p class="form-warning">Require</p>
+                <p class="form-warning" id="priEmailId">Require</p>
               </div>
             </div>
             <div class="form-group row">
@@ -203,7 +219,7 @@
                   placeholder="Principal's Mobile Number"
                   name="entry.1043112883"
                 />
-                <p class="form-warning">Require</p>
+                <p class="form-warning" id="priPhoneId">Require</p>
               </div>
             </div>
             <div class="form-group row">
@@ -216,7 +232,7 @@
                   placeholder="Sports Coordinator's Name"
                   name="entry.1182328480"
                 />
-                <p class="form-warning">Require</p>
+                <p class="form-warning" id="cooNameId">Require</p>
               </div>
             </div>
             <div class="form-group row">
@@ -229,7 +245,7 @@
                   placeholder="Sports Coordinator's Email"
                   name="entry.62024287"
                 />
-                <p class="form-warning">Require</p>
+                <p class="form-warning" id="cooEmailId">Require</p>
               </div>
             </div>
             <div class="form-group row">
@@ -242,19 +258,19 @@
                   placeholder="Sports Coordinator's Mobile Number"
                   name="entry.1788531834"
                 />
-                <p class="form-warning">Require</p>
+                <p class="form-warning" id="cooPhoneId">Require</p>
               </div>
             </div>
             <div class="form-group row">
-              <div class="col-md-6">
-                <a href="index.html">
-                  <input
-                    type="submit"
-                    class="btn btn-primary py-3 px-5 btn-block"
-                    value="Submit"
-                    onclick="submitForm()"
-                  />
-                </a>
+              <div style="margin: 0 1rem; width: 100%">
+                <!-- <a href="index.html"> -->
+                <input
+                  type="submit"
+                  class="btn btn-primary py-3 px-5 btn-block"
+                  value="Submit"
+                  onclick="submitForm()"
+                />
+                <!-- </a> -->
               </div>
             </div>
           </div>
@@ -265,17 +281,34 @@
     <script>
       async function submitForm() {
         const schoolName = document.getElementById("schoolName")?.value;
+        const schoolNameLabel = document.getElementById("schNameId")?.value;
+
         const schoolAddress = document.getElementById("schoolAddress")?.value;
+        const schoolAddressLabel = document.getElementById("schAddId")?.value;
         const principalName = document.getElementById("principalName")?.value;
+        const principalNameLabel = document.getElementById("priNameId")?.value;
         const principalEmail = document.getElementById("principalEmail")?.value;
+        const principalEmailLabel =
+          document.getElementById("priEmailId")?.value;
         const principalPhone = document.getElementById("principalPhone")?.value;
+        const principalPhoneLabel =
+          document.getElementById("priPhoneId")?.value;
         const sportsCoordinatorName = document.getElementById(
+          "sportsCoordinatorName"
+        )?.value;
+        const sportsCoordinatorNameLabel = document.getElementById(
           "sportsCoordinatorName"
         )?.value;
         const sportsCoordinatorEmail = document.getElementById(
           "sportsCoordinatorEmail"
         )?.value;
+        const sportsCoordinatorEmailLabel = document.getElementById(
+          "sportsCoordinatorEmail"
+        )?.value;
         const sportsCoordinatorPhone = document.getElementById(
+          "sportsCoordinatorPhone"
+        )?.value;
+        const sportsCoordinatorPhoneLabel = document.getElementById(
           "sportsCoordinatorPhone"
         )?.value;
 
