@@ -68,7 +68,7 @@
 
       .bg-wrapper {
         width: 100%;
-        position: absolute;
+        position: fixed;
         z-index: -1;
         top: 0;
         left: 0;
@@ -140,8 +140,78 @@
           width: 200px;
         }
       }
-    </style>
 
+      #snackbar {
+        visibility: hidden;
+        width: fit-content;
+        height: fit-content;
+        background-color: #fff;
+        color: #000;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 999;
+        left: 50%;
+        transform: translate(-50%, 0);
+        top: 30px;
+        font-size: 17px;
+        border-radius: 11px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      }
+
+      #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      }
+
+      @-webkit-keyframes fadein {
+        from {
+          bottom: 0;
+          opacity: 0;
+        }
+        to {
+          bottom: 30px;
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadein {
+        from {
+          bottom: 0;
+          opacity: 0;
+        }
+        to {
+          bottom: 30px;
+          opacity: 1;
+        }
+      }
+
+      @-webkit-keyframes fadeout {
+        from {
+          bottom: 30px;
+          opacity: 1;
+        }
+        to {
+          bottom: 0;
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadeout {
+        from {
+          bottom: 30px;
+          opacity: 1;
+        }
+        to {
+          bottom: 0;
+          opacity: 0;
+        }
+      }
+    </style>
+    <div id="snackbar">Form Submitted</div>
     <div class="site-section contact-wrap body" id="contact-section">
       <div class="ppsu-logo">
         <img src="images/PPSU White.png" alt="" />
@@ -279,6 +349,14 @@
     </div>
 
     <script>
+      function Toast() {
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function () {
+          x.className = x.className.replace("show", "");
+        }, 3000);
+      }
+
       async function submitForm() {
         const schoolName = document.getElementById("schoolName")?.value;
         const schoolNameLabel = document.getElementById("schNameId")?.value;
@@ -296,21 +374,18 @@
         const sportsCoordinatorName = document.getElementById(
           "sportsCoordinatorName"
         )?.value;
-        const sportsCoordinatorNameLabel = document.getElementById(
-          "sportsCoordinatorName"
-        )?.value;
+        const sportsCoordinatorNameLabel =
+          document.getElementById("cooNameId")?.value;
         const sportsCoordinatorEmail = document.getElementById(
           "sportsCoordinatorEmail"
         )?.value;
-        const sportsCoordinatorEmailLabel = document.getElementById(
-          "sportsCoordinatorEmail"
-        )?.value;
+        const sportsCoordinatorEmailLabel =
+          document.getElementById("cooEmailId")?.value;
         const sportsCoordinatorPhone = document.getElementById(
           "sportsCoordinatorPhone"
         )?.value;
-        const sportsCoordinatorPhoneLabel = document.getElementById(
-          "sportsCoordinatorPhone"
-        )?.value;
+        const sportsCoordinatorPhoneLabel =
+          document.getElementById("cooPhoneId")?.value;
 
         // validation of the Data
 
@@ -320,6 +395,7 @@
         fetch(LINK, {
           // mode: "no-cors",
         });
+        Toast();
       }
     </script>
   </body>
