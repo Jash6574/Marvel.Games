@@ -333,14 +333,14 @@
             </div>
             <div class="form-group row">
               <div style="margin: 0 1rem; width: 100%">
-                <!-- <a href="index.html"> -->
-                <input
-                  type="submit"
-                  class="btn btn-primary py-3 px-5 btn-block"
-                  value="Submit"
-                  onclick="submitForm()"
-                />
-                <!-- </a> -->
+                <a href="formsubmitted.html">
+                  <input
+                    type="submit"
+                    class="btn btn-primary py-3 px-5 btn-block"
+                    value="Submit"
+                    onclick="submitForm()"
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -349,14 +349,6 @@
     </div>
 
     <script>
-      function Toast() {
-        var x = document.getElementById("snackbar");
-        x.className = "show";
-        setTimeout(function () {
-          x.className = x.className.replace("show", "");
-        }, 3000);
-      }
-
       async function submitForm() {
         const schoolName = document.getElementById("schoolName")?.value;
         const schoolNameLabel = document.getElementById("schNameId")?.value;
@@ -395,15 +387,6 @@
         fetch(LINK, {
           // mode: "no-cors",
         });
-        Toast();
-        schoolName.value = " ";
-        schoolAddress.value = " ";
-        principalEmail.value = " ";
-        principalName.value = " ";
-        principalPhone.value = " ";
-        sportsCoordinatorEmail.value = " ";
-        sportsCoordinatorName.value = " ";
-        sportsCoordinatorPhone.value = " ";
       }
     </script>
   </body>
