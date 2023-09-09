@@ -34,17 +34,6 @@
 
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- <style>
-  .body{
-    background: url("images/sports-tools.jpg");
- 
-  background-size: cover;
-  }
- 
-  </style> -->
-  </head>
-
-  <body>
     <style>
       .form-warning {
         color: tomato;
@@ -92,7 +81,7 @@
         width: fit-content;
         background: #fff;
         min-width: 50vw;
-        margin-top: 200px;
+        margin-top: 70vh;
         padding: 2rem 0;
         padding-bottom: 1.5rem;
         border-radius: 11px;
@@ -114,7 +103,7 @@
       }
       .ppsu-logo {
         position: absolute;
-        width: 250px;
+        width: 200px;
         height: auto;
         top: 80px;
         left: 50%;
@@ -125,11 +114,30 @@
         width: 100%;
       }
 
+      .qr-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        width: fit-content;
+        text-align: center;
+      }
+      .qr-code {
+        width: 50% !important;
+        margin: auto;
+      }
+
+      .payment-info-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
       @media (max-width: 600px) {
         .form-wrapper {
           padding: 1rem;
           margin: 1rem;
-          margin-top: 150px;
+          margin-top: 70vh;
 
           padding-bottom: 0;
         }
@@ -137,81 +145,22 @@
           font-size: 1.5rem;
         }
         .ppsu-logo {
-          width: 200px;
+          width: 150px;
         }
-      }
-
-      #snackbar {
-        visibility: hidden;
-        width: fit-content;
-        height: fit-content;
-        background-color: #fff;
-        color: #000;
-        text-align: center;
-        border-radius: 2px;
-        padding: 16px;
-        position: fixed;
-        z-index: 999;
-        left: 50%;
-        transform: translate(-50%, 0);
-        top: 30px;
-        font-size: 17px;
-        border-radius: 11px;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-      }
-
-      #snackbar.show {
-        visibility: visible;
-        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        animation: fadein 0.5s, fadeout 0.5s 2.5s;
-      }
-
-      @-webkit-keyframes fadein {
-        from {
-          bottom: 0;
-          opacity: 0;
+        .qr-code {
+          width: 100% !important;
         }
-        to {
-          bottom: 30px;
-          opacity: 1;
+        .payment-info-wrapper {
+          font-size: 1rem;
         }
-      }
-
-      @keyframes fadein {
-        from {
-          bottom: 0;
-          opacity: 0;
-        }
-        to {
-          bottom: 30px;
-          opacity: 1;
-        }
-      }
-
-      @-webkit-keyframes fadeout {
-        from {
-          bottom: 30px;
-          opacity: 1;
-        }
-        to {
-          bottom: 0;
-          opacity: 0;
-        }
-      }
-
-      @keyframes fadeout {
-        from {
-          bottom: 30px;
-          opacity: 1;
-        }
-        to {
-          bottom: 0;
-          opacity: 0;
+        .payment-info-wrapper > h4 {
+          font-size: 1rem;
         }
       }
     </style>
-    <div id="snackbar">Form Submitted</div>
+  </head>
+
+  <body>
     <div class="site-section contact-wrap body" id="contact-section">
       <a href="/index.html" class="ppsu-logo">
         <img src="images/PPSU White.png" alt="" />
@@ -280,7 +229,6 @@
             <div class="form-group row">
               <div class="col-md-12 register-input-wrapper">
                 <input
-                  type="phone"
                   maxlength="10"
                   minlength="10"
                   class="form-control"
@@ -321,7 +269,6 @@
             <div class="form-group row">
               <div class="col-md-12 register-input-wrapper">
                 <input
-                  type="phone"
                   class="form-control"
                   required
                   id="Sports CoordinatorPhone"
@@ -331,13 +278,63 @@
                 <p class="form-warning" id="cooPhoneId">Require</p>
               </div>
             </div>
+
+            <div class="form-group row">
+              <div class="col-md-12 register-input-wrapper"></div>
+            </div>
+
+            <hr />
+
+            <div class="form-group row">
+              <div class="col-md-12 register-input-wrapper"></div>
+            </div>
+
+            <div class="form-group row" style="width: 100%; margin: auto">
+              <div class="qr-wrapper">
+                <h4>
+                  Pay 2000 INR to given Credentials and Submit your UPI
+                  Transaction ID
+                </h4>
+                <p>
+                  do not share your Transaction Id with others, it is to varify
+                  your registration!
+                </p>
+                <img src="images/qr.png" class="qr-code" />
+                <div class="payment-info-wrapper">
+                  <p>MERCHANT NAME</p>
+                  <h4>P P SAVANI UNIVERSITY</h4>
+                </div>
+                <div class="payment-info-wrapper">
+                  <p>UPI ID</p>
+                  <h4>PPSU.DHAMROD@SBI</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-md-12 register-input-wrapper"></div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-md-12 register-input-wrapper">
+                <input
+                  class="form-control"
+                  required
+                  id="Sports CoordinatorPhone"
+                  placeholder="Payment Transaction ID"
+                  name="entry.1788531834"
+                />
+                <p class="form-warning" id="cooPhoneId">Require</p>
+              </div>
+            </div>
+
             <div class="form-group row">
               <div style="margin: 0 1rem; width: 100%">
                 <a href="formsubmitted.html">
                   <input
                     type="submit"
                     class="btn btn-primary py-3 px-5 btn-block"
-                    value="Submit"
+                    value="COMPLETE REGISTRATION"
                     onclick="submitForm()"
                   />
                 </a>
