@@ -50,7 +50,7 @@
       border-radius: 0;
       box-sizing: border-box;
       color: #fff;
-
+      cursor: pointer;
       display: inline-block;
       float: right;
       font-weight: 700;
@@ -66,7 +66,6 @@
       transition: all 0.3s ease-in-out;
       user-select: none;
       font-size: 13px;
-      animation: 2s button-animation infinite ease-in-out;
     }
 
     .fancy::before {
@@ -79,6 +78,7 @@
       position: absolute;
       transform: translateY(-50%);
       transform-origin: center;
+      transition: background 0.3s linear, width 0.3s linear;
     }
 
     .fancy .text {
@@ -100,6 +100,7 @@
       left: 0.625rem;
       position: absolute;
       background: #e8e8e8;
+      transition: width 0.5s ease-out, left 0.3s ease-out;
     }
 
     .fancy .bottom-key-1 {
@@ -109,6 +110,7 @@
       bottom: -2px;
       position: absolute;
       background: #e8e8e8;
+      transition: width 0.5s ease-out, right 0.3s ease-out;
     }
 
     .fancy .bottom-key-2 {
@@ -118,14 +120,120 @@
       bottom: -2px;
       position: absolute;
       background: #e8e8e8;
+      transition: width 0.5s ease-out, right 0.3s ease-out;
+    }
+
+    .fancy:hover {
+      color: white;
+      background: black;
+    }
+
+    .fancy:hover::before {
+      width: 0.9375rem;
+      background: white;
+    }
+
+    .fancy:hover .text {
+      color: white;
+      padding-left: 1.5em;
+    }
+
+    .fancy:hover .top-key {
+      left: -2px;
+      width: 0px;
+    }
+
+    .fancy:hover .bottom-key-1,
+    .fancy:hover .bottom-key-2 {
+      right: 0;
+      width: 0;
+    }
+
+    .bg-wrapper {
+      width: 100%;
+      position: fixed;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+    .bg-wrapper > img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+    .bg-wrapper::before {
+      width: 100%;
+      height: 100%;
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 10;
+    }
+    .ppsu-logo {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      top: 80px;
+      left: 50%;
+      transform: translate(-50%, -0%);
+
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 1rem;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      font-size: 1.6rem;
+    }
+
+    .ppsu-logo img {
+      width: 150px;
+    }
+
+    .form-wrapper {
+      background: #fff;
+      color: #000;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      border-radius: 11px;
+      align-items: center;
+      border: 3px solid #d8d8d8;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+    }
+    .form-wrapper p {
+      opacity: 0.7;
+    }
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
   <body>
-    <h2 class="fancy" href="#">
-      <span class="top-key"></span>
-      <span class="text">Thank you for Submission </span>
-      <span class="bottom-key-1"></span>
-      <span class="bottom-key-2"></span>
-    </h2>
+    <div class="ppsu-logo">
+      <a href="/index.html">
+        <img src="images/PPSU White.png" alt="" />
+      </a>
+      <div class="form-wrapper">
+        <h3>Thank you For Your Registration</h3>
+        <p>you will Receive Mail After Payment Varification!</p>
+
+        <hr />
+        <a class="fancy" href="/index.html">
+          <span class="top-key"></span>
+          <span class="text">GO TO HOME PAGE </span>
+          <span class="bottom-key-1"></span>
+          <span class="bottom-key-2"></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-wrapper">
+      <img src="images/bg.jpg" alt="" />
+    </div>
   </body>
 </html>

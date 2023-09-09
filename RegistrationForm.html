@@ -48,6 +48,8 @@
         padding: 1rem;
         width: 100%;
         border-color: rgba(0, 0, 0, 0.1);
+        height: auto;
+
         /* box-shadow: rgba(17, 12, 46, 0.07) 0px 48px 100px 0px; */
       }
       .register-input-wrapper > input:focus,
@@ -74,7 +76,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        background: rgba(0, 0, 0, 0.3);
+        background: rgba(0, 0, 0, 0.6);
         z-index: 10;
       }
       .form-wrapper {
@@ -85,9 +87,8 @@
         padding: 2rem 0;
         padding-bottom: 1.5rem;
         border-radius: 11px;
-        border: 2px solid rgba(0, 0, 0, 0.08);
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        border: 3px solid #d8d8d8;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
       }
       .form-title {
         padding-bottom: 1rem;
@@ -103,15 +104,24 @@
       }
       .ppsu-logo {
         position: absolute;
-        width: 200px;
+        width: 100%;
         height: auto;
         top: 80px;
         left: 50%;
         transform: translate(-50%, -0%);
+
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        font-size: 1.6rem;
       }
 
-      .ppsu-logo > img {
-        width: 100%;
+      .ppsu-logo img {
+        width: 200px;
       }
 
       .qr-wrapper {
@@ -144,8 +154,11 @@
         h2 {
           font-size: 1.5rem;
         }
+        .ppsu-logo img {
+          width: 150px !important;
+        }
         .ppsu-logo {
-          width: 150px;
+          font-size: 1.4rem;
         }
         .qr-code {
           width: 100% !important;
@@ -162,9 +175,13 @@
 
   <body>
     <div class="site-section contact-wrap body" id="contact-section">
-      <a href="/index.html" class="ppsu-logo">
-        <img src="images/PPSU White.png" alt="" />
-      </a>
+      <div class="ppsu-logo">
+        <a href="/index.html">
+          <img src="images/PPSU White.png" alt="" />
+        </a>
+        <p>Join us and become a part of our exciting sports day!</p>
+      </div>
+
       <div class="bg-wrapper">
         <img src="images/bg.jpg" alt="" />
       </div>
@@ -246,7 +263,7 @@
                   type="text"
                   class="form-control"
                   required
-                  id="Sports CoordinatorName"
+                  id="SportsCoordinatorName"
                   placeholder="Sports Coordinator's Name"
                   name="entry.1182328480"
                 />
@@ -271,7 +288,7 @@
                 <input
                   class="form-control"
                   required
-                  id="Sports CoordinatorPhone"
+                  id="SportsCoordinatorPhone"
                   placeholder="Sports Coordinator's Mobile Number"
                   name="entry.1788531834"
                 />
@@ -320,9 +337,9 @@
                 <input
                   class="form-control"
                   required
-                  id="Sports CoordinatorPhone"
+                  id="UPIID"
                   placeholder="Payment Transaction ID"
-                  name="entry.1788531834"
+                  name="entry.73689512"
                 />
                 <p class="form-warning" id="cooPhoneId">Require</p>
               </div>
@@ -348,31 +365,32 @@
     <script>
       async function submitForm() {
         const schoolName = document.getElementById("schoolName")?.value;
-        const schoolNameLabel = document.getElementById("schNameId")?.value;
-
         const schoolAddress = document.getElementById("schoolAddress")?.value;
-        const schoolAddressLabel = document.getElementById("schAddId")?.value;
         const principalName = document.getElementById("principalName")?.value;
-        const principalNameLabel = document.getElementById("priNameId")?.value;
         const principalEmail = document.getElementById("principalEmail")?.value;
-        const principalEmailLabel =
-          document.getElementById("priEmailId")?.value;
         const principalPhone = document.getElementById("principalPhone")?.value;
-        const principalPhoneLabel =
-          document.getElementById("priPhoneId")?.value;
         const sportsCoordinatorName = document.getElementById(
           "sportsCoordinatorName"
         )?.value;
-        const sportsCoordinatorNameLabel =
-          document.getElementById("cooNameId")?.value;
         const sportsCoordinatorEmail = document.getElementById(
           "sportsCoordinatorEmail"
         )?.value;
-        const sportsCoordinatorEmailLabel =
-          document.getElementById("cooEmailId")?.value;
         const sportsCoordinatorPhone = document.getElementById(
           "sportsCoordinatorPhone"
         )?.value;
+        const UPIID = document.getElementById("UPIID")?.value;
+
+        const schoolNameLabel = document.getElementById("schNameId")?.value;
+        const schoolAddressLabel = document.getElementById("schAddId")?.value;
+        const principalNameLabel = document.getElementById("priNameId")?.value;
+        const principalEmailLabel =
+          document.getElementById("priEmailId")?.value;
+        const principalPhoneLabel =
+          document.getElementById("priPhoneId")?.value;
+        const sportsCoordinatorNameLabel =
+          document.getElementById("cooNameId")?.value;
+        const sportsCoordinatorEmailLabel =
+          document.getElementById("cooEmailId")?.value;
         const sportsCoordinatorPhoneLabel =
           document.getElementById("cooPhoneId")?.value;
 
@@ -380,7 +398,7 @@
 
         // sending Data
 
-        const LINK = `https://docs.google.com/forms/d/e/1FAIpQLSeVMHft54njqFbLKRX9RUF23aLSZrOqrjM_d_uiofAi02xRwQ/formResponse?entry.1618788176=${schoolName}&entry.173044058=${schoolAddress}&entry.2053714165=${principalName}&entry.1685933095=${principalEmail}&entry.1043112883=${principalPhone}&entry.1182328480=${sportsCoordinatorName}&entry.62024287=${sportsCoordinatorEmail}&entry.1788531834=${sportsCoordinatorPhone}`;
+        const LINK = `https://docs.google.com/forms/d/e/1FAIpQLSeVMHft54njqFbLKRX9RUF23aLSZrOqrjM_d_uiofAi02xRwQ/formResponse?entry.1618788176=${schoolName}&entry.173044058=${schoolAddress}&entry.2053714165=${principalName}&entry.1685933095=${principalEmail}&entry.1043112883=${principalPhone}&entry.1182328480=${sportsCoordinatorName}&entry.62024287=${sportsCoordinatorEmail}&entry.1788531834=${sportsCoordinatorPhone}&entry.73689512=${UPIID}`;
         fetch(LINK, {
           // mode: "no-cors",
         });
@@ -388,3 +406,8 @@
     </script>
   </body>
 </html>
+
+https://docs.google.com/forms/d/e/1FAIpQLSeVMHft54njqFbLKRX9RUF23aLSZrOqrjM_d_uiofAi02xRwQ/
+viewform?usp=pp_url& entry.1618788176= &entry.173044058= &entry.2053714165=
+&entry.1685933095= &entry.1043112883= &entry.1182328480= &entry.62024287=
+&entry.1788531834= &entry.73689512=
