@@ -189,7 +189,7 @@
         <div class="row justify-content-center">
           <form
             action="https://docs.google.com/forms/d/e/1FAIpQLSeVMHft54njqFbLKRX9RUF23aLSZrOqrjM_d_uiofAi02xRwQ/formResponse"
-            method="post"
+            method="POST"
             class="col-md-11"
             id="myForm"
           >
@@ -371,19 +371,23 @@
       document
         .getElementById("myForm")
         .addEventListener("submit", function (event) {
-          event.preventDefault(); // Prevent the default form submission
-          // You can optionally perform any client-side validation here
-
-          // Serialize form data
+          event.preventDefault();
           var formData = new FormData(this);
 
-          // Submit the form data to Google Forms using fetch
           fetch(this.action, {
             method: this.method,
             body: formData,
-          });
-
-          window.location.href = "/formsubmitted.html";
+          })
+            .then(function (response) {
+              // Handle the response here (e.g., show a thank-you message)
+              console.log("Form submitted successfully!");
+              window.location.href = "/formsubmitted.html";
+            })
+            .catch(function (error) {
+              window.location.href = "/formsubmitted.html";
+              // Handle errors if the submission fails
+              console.error("Form submission error:", error);
+            });
         });
     </script>
   </body>
