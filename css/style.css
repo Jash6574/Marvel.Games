@@ -70,11 +70,11 @@ h5,
 }
 
 .text-black {
-  color: #000 !important;
+  color: #000;
 }
 
 .bg-black {
-  background: #000 !important;
+  background: #000;
 }
 
 .color-black-opacity-5 {
@@ -1297,35 +1297,25 @@ h5,
   color: #000;
 }
 
-.class-item .class-item-text p,
-.class-item .class-item-text span {
-  color: #aeaeae;
-}
-
 .class-item .class-item-text span {
   font-size: 16px;
 }
 
 .class-item:hover {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
   z-index: 2;
   background: #f23a2e;
+  color: white;
 }
 
-.class-item:hover h2 a {
-  color: #fff;
+.class-item:hover h2 {
+  color: #fff !important;
 }
-
-/* 
-.class-item:hover p,
-.class-item:hover span {
-  color: #ff7c67;
-} */
 
 .class-item:hover span a {
-  color: #fff;
+  color: #fff !important;
   font-size: 12px;
   text-decoration: underline;
 }
@@ -1461,7 +1451,7 @@ h5,
 }
 
 .footer-section {
-  padding-top: 12rem !important;
+  padding-top: 5rem !important;
 }
 
 .footer-wrapper {
@@ -1469,4 +1459,56 @@ h5,
   align-items: start;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.contact-us-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact-us-information {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding-top: 1rem;
+  border: 2px solid rgba(0, 0, 0, 0.04);
+  width: 100%;
+  max-width: 330px;
+  padding: 1.3rem 1.5rem;
+  border-radius: 7px;
+  box-shadow: rgba(17, 12, 46, 0.04) 0px 25px 50px 0px;
+}
+
+.contact-us-information p,
+.contact-us-information h2 {
+  margin: 0;
+}
+
+.contact-us-information p,
+.contact-us-information h6 {
+  color: #000;
+  opacity: 0.6;
+}
+
+.contact-details {
+  display: flex;
+  align-items: center;
+  /* padding: 0.3rem 0; */
+}
+.contact-details svg {
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  border-radius: 7px;
+  padding: 0.3rem;
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+@media (max-width: 600px) {
+  .contact-us-information h2 {
+    font-size: 1.3rem;
+  }
 }

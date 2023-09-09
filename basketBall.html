@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+
+    <link rel="shortcut icon" href="ftco-32x32.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+
+    <link rel="stylesheet" href="css/aos.css" />
+    <link
+      href="css/jquery.mb.YTPlayer.min.css"
+      media="all"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      .form-warning {
+        color: tomato;
+        font-size: 0.9rem;
+        display: none;
+      }
+      .register-input-wrapper {
+        width: 100%;
+      }
+      .register-input-wrapper input {
+        border-radius: 4px !important;
+        padding: 1rem;
+        width: 100%;
+        border-color: rgba(0, 0, 0, 0.1);
+        height: auto;
+
+        /* box-shadow: rgba(17, 12, 46, 0.07) 0px 48px 100px 0px; */
+      }
+      .register-input-wrapper > input:focus,
+      .register-input-wrapper > input:hover {
+        border-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .bg-wrapper {
+        width: 100%;
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        left: 0;
+      }
+      .bg-wrapper > img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+      }
+      .bg-wrapper::before {
+        width: 100%;
+        height: 100%;
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 10;
+      }
+      .form-wrapper {
+        width: fit-content;
+        background: #fff;
+        min-width: 50vw;
+        margin-top: 70vh;
+        padding: 2rem 0;
+        padding-bottom: 1.5rem;
+        border-radius: 11px;
+        border: 3px solid #d8d8d8;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+      }
+      .form-title {
+        padding-bottom: 1rem;
+        text-align: center;
+      }
+
+      .btn {
+        border: none;
+        background: rgb(255, 65, 65);
+      }
+      .btn:hover {
+        background: rgb(176, 2, 2);
+      }
+      .ppsu-logo {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 80px;
+        left: 50%;
+        transform: translate(-50%, -0%);
+
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        font-size: 1.6rem;
+      }
+
+      .ppsu-logo img {
+        width: 200px;
+      }
+
+      .qr-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        width: fit-content;
+        text-align: center;
+      }
+      .qr-code {
+        width: 50% !important;
+        margin: auto;
+      }
+
+      .payment-info-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      @media (max-width: 600px) {
+        .form-wrapper {
+          padding: 1rem;
+          margin: 1rem;
+          margin-top: 70vh;
+
+          padding-bottom: 0;
+        }
+        h2 {
+          font-size: 1.5rem;
+        }
+        .ppsu-logo img {
+          width: 150px !important;
+        }
+        .ppsu-logo {
+          font-size: 1.4rem;
+        }
+        .qr-code {
+          width: 100% !important;
+        }
+        .payment-info-wrapper {
+          font-size: 1rem;
+        }
+        .payment-info-wrapper > h4 {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="site-section contact-wrap body" id="contact-section">
+      <div class="ppsu-logo">
+        <a href="/index.html">
+          <img src="images/PPSU White.png" alt="" />
+        </a>
+        <p>Join us and become a part of our exciting sports day!</p>
+      </div>
+
+      <div class="bg-wrapper">
+        <img src="images/bg.jpg" alt="" />
+      </div>
+      <div class="container form-wrapper">
+        <div class="row justify-content-center">
+          <form
+            action="https://docs.google.com/forms/d/e/1FAIpQLSeVMHft54njqFbLKRX9RUF23aLSZrOqrjM_d_uiofAi02xRwQ/formResponse"
+            method="POST"
+            class="col-md-11"
+            id="myForm"
+          >
+            <div class="form-group row">
+              <div class="col-md-12 register-input-wrapper">
+                <div class="form-title">
+                  <h2>Register your School for the Sports day</h2>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  required
+                  id="schoolName"
+                  placeholder="School name"
+                  name="entry.1618788176"
+                />
+                <p class="form-warning" id="schNameId">Require</p>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div style="margin: 0 1rem; width: 100%">
+                <!-- <a href="formsubmitted.html"> -->
+                <input
+                  type="submit"
+                  class="btn btn-primary py-3 px-5 btn-block"
+                  value="COMPLETE REGISTRATION"
+                  id="submitBtn"
+                />
+                <!-- </a> -->
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          var formData = new FormData(this);
+
+          fetch(this.action, {
+            method: this.method,
+            body: formData,
+          })
+            .then(function (response) {
+              // Handle the response here (e.g., show a thank-you message)
+              console.log("Form submitted successfully!");
+              window.location.href = "/formsubmitted.html";
+            })
+            .catch(function (error) {
+              window.location.href = "/formsubmitted.html";
+              // Handle errors if the submission fails
+              console.error("Form submission error:", error);
+            });
+        });
+    </script>
+  </body>
+</html>
