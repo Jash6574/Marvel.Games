@@ -35,11 +35,6 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <style>
-      .form-warning {
-        color: tomato;
-        font-size: 0.9rem;
-        display: none;
-      }
       .register-input-wrapper {
         width: 100%;
       }
@@ -49,26 +44,30 @@
         width: 100%;
         border-color: rgba(0, 0, 0, 0.1);
         height: auto;
-
-        /* box-shadow: rgba(17, 12, 46, 0.07) 0px 48px 100px 0px; */
+        margin-bottom: 1rem;
+      }
+      .radio-btn {
+        border-radius: 4px !important;
+        padding: 1rem;
+        width: 100%;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        height: auto;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        color: black;
+      }
+      .radio-btn div {
+        display: flex;
+        gap: 0.6rem;
+        align-items: center;
       }
       .register-input-wrapper > input:focus,
       .register-input-wrapper > input:hover {
         border-color: rgba(0, 0, 0, 0.5);
       }
 
-      .bg-wrapper {
-        width: 100%;
-        position: fixed;
-        z-index: -1;
-        top: 0;
-        left: 0;
-      }
-      .bg-wrapper > img {
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
-      }
       .bg-wrapper::before {
         width: 100%;
         height: 100%;
@@ -82,9 +81,10 @@
       .form-wrapper {
         width: fit-content;
         background: #fff;
-        min-width: 50vw;
-        margin-top: 70vh;
-        padding: 2rem 0;
+        margin: auto;
+        min-width: 80vw;
+        margin-top: 60vh;
+        padding: 2rem 1.5rem;
         padding-bottom: 1.5rem;
         border-radius: 11px;
         border: 3px solid #d8d8d8;
@@ -124,32 +124,18 @@
         width: 200px;
       }
 
-      .qr-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-        width: fit-content;
-        text-align: center;
-      }
-      .qr-code {
-        width: 50% !important;
-        margin: auto;
-      }
-
-      .payment-info-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
       @media (max-width: 600px) {
         .form-wrapper {
           padding: 1rem;
-          margin: 1rem;
+          margin: 1rem auto;
           margin-top: 70vh;
-
+          width: 95%;
+          overflow: hidden;
+          word-wrap: break-word;
           padding-bottom: 0;
+        }
+        h1 {
+          font-size: 2rem !important;
         }
         h2 {
           font-size: 1.5rem;
@@ -170,63 +156,384 @@
           font-size: 1rem;
         }
       }
+
+      .bg-img {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -10;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+      }
+      .bg-img img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        /* transform: translate(0, -3%); */
+      }
+      .rules-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 0.5rem;
+        padding-bottom: 0.5rem;
+        border-radius: 8px;
+        border: 2px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .main-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0rem;
+        padding-bottom: 0.5rem;
+        border-radius: 8px;
+        border: 2px solid rgba(0, 0, 0, 0.05);
+      }
+      .coordinator {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .contact-details {
+        justify-content: center;
+      }
+
+      .main-body {
+        padding: 1rem;
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+
+      @media (max-width: 600px) {
+        .rules-wrapper {
+          padding: 1rem 0;
+          padding-right: 0.4rem;
+        }
+        .rules-wrapper h3 {
+          font-size: 1.5rem;
+        }
+
+        .main-body {
+          padding: 0;
+        }
+      }
     </style>
   </head>
 
   <body>
-    <div class="site-section contact-wrap body" id="contact-section">
-      <div class="ppsu-logo">
-        <a href="/index.html">
-          <img src="images/PPSU White.png" alt="" />
-        </a>
-        <p>Join us and become a part of our exciting sports day!</p>
-      </div>
-
-      <div class="bg-wrapper">
-        <img src="images/bg.jpg" alt="" />
-      </div>
-      <div class="container form-wrapper">
-        <div class="row justify-content-center">
-          <form
-            action="https://docs.google.com/forms/d/e/1FAIpQLSeVMHft54njqFbLKRX9RUF23aLSZrOqrjM_d_uiofAi02xRwQ/formResponse"
-            method="POST"
-            class="col-md-11"
-            id="myForm"
-          >
-            <div class="form-group row">
-              <div class="col-md-12 register-input-wrapper">
-                <div class="form-title">
-                  <h2>Register your School for the Sports day</h2>
-                </div>
-                <input
-                  type="text"
-                  class="form-control"
-                  required
-                  id="schoolName"
-                  placeholder="School name"
-                  name="entry.1618788176"
-                />
-                <p class="form-warning" id="schNameId">Require</p>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <div style="margin: 0 1rem; width: 100%">
-                <!-- <a href="formsubmitted.html"> -->
-                <input
-                  type="submit"
-                  class="btn btn-primary py-3 px-5 btn-block"
-                  value="COMPLETE REGISTRATION"
-                  id="submitBtn"
-                />
-                <!-- </a> -->
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+    <div class="ppsu-logo">
+      <a href="/index.html">
+        <img src="images/PPSU White.png" alt="" />
+      </a>
+    </div>
+    <div class="bg-img">
+      <img
+        src="https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80"
+      />
     </div>
 
+    <div class="main-body">
+      <div class="form-wrapper">
+        <h1 style="text-align: center; font-size: 3rem; font-weight: 700">
+          BASKET BALL
+        </h1>
+        <br />
+        <br />
+        <h2 style="text-align: center">Event Rule & Instructions</h2>
+        <br />
+        <div class="rules-wrapper">
+          <div style="width: 100%">
+            <h3 style="margin-left: 1rem">General Instructions</h3>
+            <ul>
+              <li>
+                ID cards issued by school of every team member are compulsory in
+                order to play/participate. If any player does not have an id
+                card, then they need to carry his/her school bonafide
+                certificate.
+              </li>
+              <li>
+                Team should report 30 minutes before the start of the match.
+              </li>
+              <li>
+                Any team later than 10 minutes of the scheduled time will have
+                to forfeit the match.
+              </li>
+              <li>
+                Any team found misbehaving with the referee or the member of the
+                organizing committee will be disqualified.
+              </li>
+              <li>
+                Any team player prior/later found having a fake ID committee’s
+                decision will be final.
+              </li>
+              <li>
+                The referee's decision will be the final decision during the
+                game.
+              </li>
+              <li>
+                In case of a conflict, decisions of the Sports Committee will be
+                considered as final decision.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <br />
+        <div class="rules-wrapper">
+          <div style="width: 100%">
+            <h3 style="margin-left: 1rem">Basketball Instructions</h3>
+            <ul>
+              <li>
+                Each team should have a minimum of 7 players and maximum of 12
+                players.
+              </li>
+              <li>
+                The team is requested to coordinate with the fixtures given by
+                organizers.
+              </li>
+              <li>
+                Maintain proper discipline with the organizers and security
+                guards and follow the instructions.
+              </li>
+              <li>Rolling substitutions will be allowed.</li>
+              <li>Match will be conducted in running time.</li>
+              <li>
+                Duration: 4 quarters of 10 minutes each with a 2-minute break
+                between the quarters.
+              </li>
+              <li>
+                5 personal fouls per player will be allowed. A player will be
+                warned after 3 personal fouls.
+              </li>
+              <li>
+                In each quarter, after 4 team fouls, then onwards every foul
+                will award 2 free shots to the opposite team.
+              </li>
+              <li>
+                One time-out per team will be allowed per quarter except for the
+                last quarter in which 2 time-outs per team will be allowed.
+              </li>
+              <li>
+                The referees’ decisions will be final and abiding for all foul
+                calls.
+              </li>
+              <li>
+                All standard full court Basketball rules (FIBA rules) apply.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <br />
+        <div class="main-wrapper">
+          <div style="width: 100%; padding: 1rem">
+            <form
+              action="https://docs.google.com/forms/d/e/1FAIpQLSfYLhMKap24enSKOx-MyBarFEjACfbDB7TZxkxDRY98NZ6-lg/formResponse"
+              id="myForm"
+              method="post"
+            >
+              <div class="form-group row">
+                <div class="col-md-12 register-input-wrapper">
+                  <div class="form-title">
+                    <h2>Register Your Team</h2>
+                    <br />
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="School name"
+                    name="entry.1603166947"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="Sports Coordinator"
+                    name="entry.212972013"
+                  />
+                  <input
+                    type="email"
+                    class="form-control"
+                    required
+                    placeholder="Sports Coordinator's Email"
+                    name="entry.1035607940"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="Sports Coordinator's Contact No."
+                    name="entry.1487438826"
+                  />
+                  <div class="radio-btn">
+                    <p>Tournament</p>
+                    <div>
+                      <input
+                        type="radio"
+                        style="margin-top: 0.5rem"
+                        name="entry.1184451097"
+                        value="Male"
+                      />
+                        <label for="css">Male</label>
+                    </div>
+                    <div>
+                      <input
+                        type="radio"
+                        style="margin-top: 0.5rem"
+                        name="entry.1184451097"
+                        value="Female"
+                      />
+                        <label for="css">Female</label>
+                    </div>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="Age Group"
+                    name="entry.1393264921"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="Team Leader's Name (Member 1)"
+                    name="entry.552965296"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="Name of Member 2"
+                    name="entry.2142340628"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="Name of Member 3"
+                    name="entry.530174344"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="Name of Member 4"
+                    name="entry.1817730159"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="Name of Member 5"
+                    name="entry.232889509"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="Name of Member 6"
+                    name="entry.313761964"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="Name of Member 7"
+                    name="entry.788012250"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="Name of Member 8"
+                    name="entry.1422235846"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="Name of Member 9"
+                    name="entry.1597962735"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="Name of Member 10"
+                    name="entry.1304196776"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="Name of Member 11"
+                    name="entry.306903966"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="Name of Member 12"
+                    name="entry.664240158"
+                  />
+                </div>
+              </div>
+
+              <div class="">
+                <div style="width: 100%">
+                  <!-- <a href="formsubmitted.html"> -->
+                  <input
+                    type="submit"
+                    class="btn btn-primary py-3 px-5 btn-block"
+                    value="COMPLETE REGISTRATION"
+                    id="submitBtn"
+                  />
+                  <!-- </a> -->
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <br />
+
+        <div class="coordinator">
+          <p>Got any Queries?</p>
+          <h3>Contact Our Basketball Event Coordinator</h3>
+
+          <div>
+            <h2>Kashyap Thakkar</h2>
+            <div class="contact-details">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-phone"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              <a href="tel:+916358937412">+91 6358 937 412</a>
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
     <script>
       document
         .getElementById("myForm")
