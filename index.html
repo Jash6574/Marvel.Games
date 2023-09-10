@@ -47,6 +47,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
   <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css" />
 
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/videoBG.css" />
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -96,7 +97,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
     </header>
 
     <a id="bgndVideo" class="player"
-      data-property="{videoURL:'https://youtu.be/t5HHFGme0gI',showYTLogo:false, showAnnotations: false, showControls: false, cc_load_policy: false, containment:'#home-section',autoPlay:true, mute:true, startAt:3, stopAt: 40, opacity:1 }">
+      data-property="{videoURL:'https://youtu.be/JbSDWHJtU-w',showYTLogo:false, showAnnotations: false, showControls: false, cc_load_policy: false, containment:'#home-section',autoPlay:true, mute:true, startAt:3, stopAt: 40, opacity:1 }">
     </a>
 
     <div class="intro-section" id="home-section" style="background-color: #ccc">
@@ -247,7 +248,7 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
     </div>
 
  
-    <div class=" bgimg" data-stellar-background-ratio="0.5">
+    <!-- <div class=" bgimg" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
           <div class="col-md-12">
@@ -262,6 +263,33 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
               <br>
               <a href="#sports-section">click here to join now</a>
             </p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+    <div class="video-background-holder">
+      <div class="video-background-overlay"></div>
+      <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="images/PPSU Final.mp4" type="video/mp4">
+        </video>
+      <div class="video-background-content container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+          <div class="w-100 text-white">
+            <h2 class="" style="font-size: 31px;font-weight: bold;color: #fff;">
+              Claim Your Victory in the <span style="color: #f23a2e; font-weight: 800">Marvel Games</span> Inter-School Sports
+              Showdown
+            </h2>
+            <!-- <p class="lead mb-0">With HTML5 Video and Bootstrap 4</p> -->
+            <p class="lead mx-auto desc mb-5" style="font-size: 18px;color: #ffffffc3;">
+              Unleash Your Inner Hero: Assemble, Compete, Triumph in the
+              'Marvel Games' an Inter-School Sports Showdown
+              
+              <br>
+              <a href="#sports-section" style="color: #ffffffc3;text-decoration: underline;">click here to join now</a>
+            </p>
+            
           </div>
         </div>
       </div>
@@ -1605,9 +1633,9 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
 
         <div class="contact-us-wrapper">
           <div class="contact-us-information">
-            <p>For School Registration</p>
-            <div>
-              <h2>Ankit Bhatt</h2>
+            <p  style="text-align: center;">For School Registration</p>
+            <div style="text-align: center;">
+              <h2 style="font-weight: bold;">Ankit Bhatt</h2>
               <h6>Outreach Manager</h6>
             </div>
             <div class="contact-details">
@@ -1631,10 +1659,10 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
           </div>
 
           <div class="contact-us-information">
-            <p>For Games Registration</p>
+            <p  style="text-align: center;">For Games Registration</p>
             <div>
-              <h2>Pranay Prasoon</h2>
-              <h6>Sports Officer</h6>
+              <h2 style="text-align: center;font-weight: bold;">Pranay Prasoon</h2>
+              <h6 style="text-align: center;">Sports Officer</h6>
             </div>
             <div class="contact-details">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -1785,16 +1813,17 @@ RSS Feed: https://feeds.feedburner.com/Free-templateco
           </div>
         </div>
 
-        <!-- <div class="row pt-5 mt-5 text-center">
+        <div class="row text-center" >
           <div class="col-md-12">
-            <div class=" pt-5">
-              <p class="copyright"><small>&copy;
-                  <script>document.write(new Date().getFullYear());</script> Stamina. All Rights Reserved. Design by <a
-                    href="https://free-template.co" target="_blank">Free-Template.co</a></small></p>
+            <div class=" pt-5 mt-5" >
+
+            <p class="copyright"><small>
+              &copy;
+                  <script>document.write(new Date().getFullYear());</script> PPSU - Marvel Games. All Rights Reserved.</small>
+            </p>
             </div>
           </div>
-
-        </div> -->
+        </div>
       </div>
     </footer>
   </div>
