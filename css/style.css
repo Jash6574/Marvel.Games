@@ -51,7 +51,7 @@ a:hover {
 
 @font-face {
   font-family: HungerGames;
-  src: url(/fonts/HungerGames.ttf);
+  src: url(HungerGames.ttf);
 }
 
 * {
