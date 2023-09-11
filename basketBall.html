@@ -35,34 +35,6 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <style>
-      .register-input-wrapper {
-        width: 100%;
-      }
-      .register-input-wrapper input {
-        border-radius: 4px !important;
-        padding: 1rem;
-        width: 100%;
-        border-color: rgba(0, 0, 0, 0.1);
-        height: auto;
-        margin-bottom: 1rem;
-      }
-      .radio-btn {
-        border-radius: 4px !important;
-        padding: 1rem;
-        width: 100%;
-        border: 2px solid rgba(0, 0, 0, 0.1);
-        height: auto;
-        margin-bottom: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        color: black;
-      }
-      .radio-btn div {
-        display: flex;
-        gap: 0.6rem;
-        align-items: center;
-      }
       .register-input-wrapper > input:focus,
       .register-input-wrapper > input:hover {
         border-color: rgba(0, 0, 0, 0.5);
@@ -212,6 +184,10 @@
         margin-bottom: 2rem;
       }
 
+      input {
+        margin-bottom: 1rem !important;
+      }
+
       @media (max-width: 600px) {
         .rules-wrapper {
           padding: 1rem 0;
@@ -230,7 +206,7 @@
 
   <body>
     <div class="ppsu-logo">
-      <a href="/index.html">
+      <a href="index.html">
         <img src="images/PPSU White.png" alt="" />
       </a>
     </div>
@@ -344,40 +320,129 @@
                     <h2>Register Your Team</h2>
                     <br />
                   </div>
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="School name"
-                    name="entry.1603166947"
-                  />
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="Sports Coordinator"
-                    name="entry.212972013"
-                  />
-                  <input
-                    type="email"
-                    class="form-control"
-                    required
-                    placeholder="Sports Coordinator's Email"
-                    name="entry.1035607940"
-                  />
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="Sports Coordinator's Contact No."
-                    name="entry.1487438826"
-                  />
+
+                  <div class="register-input-wrapper">
+                    <div class="input-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-school"
+                      >
+                        <path d="m4 6 8-4 8 4" />
+                        <path
+                          d="m18 10 4 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8l4-2"
+                        />
+                        <path d="M14 22v-4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v4" />
+                        <path d="M18 5v17" />
+                        <path d="M6 5v17" />
+                        <circle cx="12" cy="9" r="2" />
+                      </svg>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="School name"
+                      name="entry.1603166947"
+                    />
+                  </div>
+                  <div class="register-input-wrapper">
+                    <div class="input-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-user-circle-2"
+                      >
+                        <path d="M18 20a6 6 0 0 0-12 0" />
+                        <circle cx="12" cy="10" r="4" />
+                        <circle cx="12" cy="12" r="10" />
+                      </svg>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="Sports Coordinator's Name"
+                      name="entry.212972013"
+                    />
+                  </div>
+
+                  <div class="register-input-wrapper">
+                    <div class="input-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-mail"
+                      >
+                        <rect width="20" height="16" x="2" y="4" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                      </svg>
+                    </div>
+                    <input
+                      type="email"
+                      class="form-control"
+                      required
+                      placeholder="Sports Coordinator's Email"
+                      name="entry.1035607940"
+                    />
+                  </div>
+
+                  <div class="register-input-wrapper">
+                    <div class="input-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-phone"
+                      >
+                        <path
+                          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                        />
+                      </svg>
+                    </div>
+
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="Sports Coordinator's Contact No."
+                      name="entry.1487438826"
+                    />
+                  </div>
+
                   <div class="radio-btn">
                     <p>Tournament</p>
                     <div>
                       <input
                         type="radio"
-                        style="margin-top: 0.5rem"
+                        style="margin-bottom: 0.5rem"
                         name="entry.1184451097"
                         value="Male"
                       />
@@ -386,104 +451,409 @@
                     <div>
                       <input
                         type="radio"
-                        style="margin-top: 0.5rem"
+                        style="margin-bottom: 0.5rem"
                         name="entry.1184451097"
                         value="Female"
                       />
                         <label for="css">Female</label>
                     </div>
                   </div>
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="Age Group"
-                    name="entry.1393264921"
-                  />
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="Team Leader's Name (Member 1)"
-                    name="entry.552965296"
-                  />
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="Name of Member 2"
-                    name="entry.2142340628"
-                  />
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="Name of Member 3"
-                    name="entry.530174344"
-                  />
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="Name of Member 4"
-                    name="entry.1817730159"
-                  />
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="Name of Member 5"
-                    name="entry.232889509"
-                  />
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="Name of Member 6"
-                    name="entry.313761964"
-                  />
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="Name of Member 7"
-                    name="entry.788012250"
-                  />
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="Name of Member 8"
-                    name="entry.1422235846"
-                  />
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="Name of Member 9"
-                    name="entry.1597962735"
-                  />
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="Name of Member 10"
-                    name="entry.1304196776"
-                  />
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="Name of Member 11"
-                    name="entry.306903966"
-                  />
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="Name of Member 12"
-                    name="entry.664240158"
-                  />
+
+                  <div class="register-input-wrapper">
+                    <div class="input-icon"></div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="Age Group"
+                      name="entry.1393264921"
+                    />
+                  </div>
+                  <div class="register-input-wrapper">
+                    <div class="input-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-backpack"
+                      >
+                        <path
+                          d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                        />
+                        <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                        <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+                        <path d="M8 10h8" />
+                        <path d="M8 18h8" />
+                      </svg>
+
+                      <p>1</p>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="Team Leader's Name (Member 1)"
+                      name="entry.552965296"
+                    />
+                  </div>
+                  <div class="register-input-wrapper">
+                    <div class="input-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-backpack"
+                      >
+                        <path
+                          d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                        />
+                        <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                        <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+                        <path d="M8 10h8" />
+                        <path d="M8 18h8" />
+                      </svg>
+                      <p>2</p>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="Name of Member 2"
+                      name="entry.2142340628"
+                    />
+                  </div>
+                  <div class="register-input-wrapper">
+                    <div class="input-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-backpack"
+                      >
+                        <path
+                          d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                        />
+                        <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                        <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+                        <path d="M8 10h8" />
+                        <path d="M8 18h8" />
+                      </svg>
+                      <p>3</p>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="Name of Member 3"
+                      name="entry.530174344"
+                    />
+                  </div>
+                  <div class="register-input-wrapper">
+                    <div class="input-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-backpack"
+                      >
+                        <path
+                          d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                        />
+                        <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                        <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+                        <path d="M8 10h8" />
+                        <path d="M8 18h8" />
+                      </svg>
+                      <p>4</p>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="Name of Member 4"
+                      name="entry.1817730159"
+                    />
+                  </div>
+                  <div class="register-input-wrapper">
+                    <div class="input-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-backpack"
+                      >
+                        <path
+                          d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                        />
+                        <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                        <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+                        <path d="M8 10h8" />
+                        <path d="M8 18h8" />
+                      </svg>
+                      <p>5</p>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="Name of Member 5"
+                      name="entry.232889509"
+                    />
+                  </div>
+                  <div class="register-input-wrapper">
+                    <div class="input-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-backpack"
+                      >
+                        <path
+                          d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                        />
+                        <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                        <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+                        <path d="M8 10h8" />
+                        <path d="M8 18h8" />
+                      </svg>
+                      <p>6</p>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="Name of Member 6"
+                      name="entry.313761964"
+                    />
+                  </div>
+                  <div class="register-input-wrapper">
+                    <div class="input-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-backpack"
+                      >
+                        <path
+                          d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                        />
+                        <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                        <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+                        <path d="M8 10h8" />
+                        <path d="M8 18h8" />
+                      </svg>
+                      <p>7</p>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="Name of Member 7"
+                      name="entry.788012250"
+                    />
+                  </div>
+                  <div class="register-input-wrapper">
+                    <div class="input-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-backpack"
+                      >
+                        <path
+                          d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                        />
+                        <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                        <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+                        <path d="M8 10h8" />
+                        <path d="M8 18h8" />
+                      </svg>
+                      <p>8</p>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="Name of Member 8"
+                      name="entry.1422235846"
+                    />
+                  </div>
+                  <div class="register-input-wrapper">
+                    <div class="input-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-backpack"
+                      >
+                        <path
+                          d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                        />
+                        <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                        <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+                        <path d="M8 10h8" />
+                        <path d="M8 18h8" />
+                      </svg>
+                      <p>9</p>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="Name of Member 9"
+                      name="entry.1597962735"
+                    />
+                  </div>
+                  <div class="register-input-wrapper">
+                    <div class="input-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-backpack"
+                      >
+                        <path
+                          d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                        />
+                        <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                        <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+                        <path d="M8 10h8" />
+                        <path d="M8 18h8" />
+                      </svg>
+                      <p>10</p>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="Name of Member 10"
+                      name="entry.1304196776"
+                    />
+                  </div>
+                  <div class="register-input-wrapper">
+                    <div class="input-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-backpack"
+                      >
+                        <path
+                          d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                        />
+                        <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                        <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+                        <path d="M8 10h8" />
+                        <path d="M8 18h8" />
+                      </svg>
+                      <p>11</p>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="Name of Member 11"
+                      name="entry.306903966"
+                    />
+                  </div>
+                  <div class="register-input-wrapper">
+                    <div class="input-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-backpack"
+                      >
+                        <path
+                          d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                        />
+                        <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                        <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+                        <path d="M8 10h8" />
+                        <path d="M8 18h8" />
+                      </svg>
+                      <p>12</p>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      placeholder="Name of Member 12"
+                      name="entry.664240158"
+                    />
+                  </div>
                 </div>
               </div>
 
