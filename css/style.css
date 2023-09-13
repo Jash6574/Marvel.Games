@@ -1564,7 +1564,7 @@ h5,
 }
 
 .register-input-wrapper input::placeholder,
-.register-input-wrapper input[type=date]::placeholder {
+.register-input-wrapper input[type="date"] {
   color: #b2b2b2;
 }
 
@@ -1600,6 +1600,7 @@ h5,
 }
 
 .radio-btn-wrapper {
+  position: relative;
   border-radius: 4px !important;
   padding: 1rem;
   width: 100%;
