@@ -1,1247 +1,850 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Table Tennis | Registration</title>
 
-        <link rel="shortcut icon" href="images/marvellogo.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Table Tennis | Registration</title>
+
+  <link rel="shortcut icon" href="images/marvellogo.png" />
 
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet" />
+  <link rel="stylesheet" href="fonts/icomoon/style.css" />
 
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/jquery-ui.css" />
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/jquery-ui.css" />
+  <link rel="stylesheet" href="css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="css/owl.theme.default.min.css" />
 
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
 
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css" />
 
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" />
 
-    <link rel="stylesheet" href="css/aos.css" />
-    <link
-      href="css/jquery.mb.YTPlayer.min.css"
-      media="all"
-      rel="stylesheet"
-      type="text/css"
-    />
+  <link rel="stylesheet" href="css/aos.css" />
+  <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css" />
 
-    <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 
-    <style>
-      .register-input-wrapper > input:focus,
-      .register-input-wrapper > input:hover {
-        border-color: rgba(0, 0, 0, 0.5);
-      }
+  <style>
+    .register-input-wrapper>input:focus,
+    .register-input-wrapper>input:hover {
+      border-color: rgba(0, 0, 0, 0.5);
+    }
 
-      .bg-wrapper::before {
-        width: 100%;
-        height: 100%;
-        content: " ";
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: 10;
-      }
+    .bg-wrapper::before {
+      width: 100%;
+      height: 100%;
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 10;
+    }
+
+    .form-wrapper {
+      width: fit-content;
+      background: #fff;
+      margin: auto;
+      min-width: 80vw;
+      margin-top: 60vh;
+      padding: 2rem 1.5rem;
+      padding-bottom: 1.5rem;
+      border-radius: 11px;
+      border: 3px solid #d8d8d8;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+    }
+
+    .form-title {
+      padding-bottom: 1rem;
+      text-align: center;
+    }
+
+    .btn {
+      border: none;
+      background: rgb(255, 65, 65);
+    }
+
+    .btn:hover {
+      background: rgb(176, 2, 2);
+    }
+
+    .ppsu-logo {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      top: 80px;
+      left: 50%;
+      transform: translate(-50%, -0%);
+
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      font-size: 1.6rem;
+    }
+
+    .ppsu-logo img {
+      width: 200px;
+    }
+
+    @media (max-width: 600px) {
       .form-wrapper {
-        width: fit-content;
-        background: #fff;
-        margin: auto;
-        min-width: 80vw;
-        margin-top: 60vh;
-        padding: 2rem 1.5rem;
-        padding-bottom: 1.5rem;
-        border-radius: 11px;
-        border: 3px solid #d8d8d8;
-        box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
-      }
-      .form-title {
-        padding-bottom: 1rem;
-        text-align: center;
-      }
-
-      .btn {
-        border: none;
-        background: rgb(255, 65, 65);
-      }
-      .btn:hover {
-        background: rgb(176, 2, 2);
-      }
-      .ppsu-logo {
-        position: absolute;
-        width: 100%;
-        height: auto;
-        top: 80px;
-        left: 50%;
-        transform: translate(-50%, -0%);
-
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
         padding: 1rem;
-        align-items: center;
-        text-align: center;
-        color: #fff;
-        font-size: 1.6rem;
+        margin: 1rem auto;
+        margin-top: 70vh;
+        width: 95%;
+        overflow: hidden;
+        word-wrap: break-word;
+        padding-bottom: 0;
+      }
+
+      h1 {
+        font-size: 2rem !important;
+      }
+
+      h2 {
+        font-size: 1.5rem;
       }
 
       .ppsu-logo img {
-        width: 200px;
+        width: 150px !important;
       }
 
-      @media (max-width: 600px) {
-        .form-wrapper {
-          padding: 1rem;
-          margin: 1rem auto;
-          margin-top: 70vh;
-          width: 95%;
-          overflow: hidden;
-          word-wrap: break-word;
-          padding-bottom: 0;
-        }
-        h1 {
-          font-size: 2rem !important;
-        }
-        h2 {
-          font-size: 1.5rem;
-        }
-        .ppsu-logo img {
-          width: 150px !important;
-        }
-        .ppsu-logo {
-          font-size: 1.4rem;
-        }
-        .qr-code {
-          width: 100% !important;
-        }
-        .payment-info-wrapper {
-          font-size: 1rem;
-        }
-        .payment-info-wrapper > h4 {
-          font-size: 1rem;
-        }
+      .ppsu-logo {
+        font-size: 1.4rem;
       }
 
-      .bg-img {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: -10;
-        height: 100vh;
-        width: 100vw;
-        overflow: hidden;
+      .qr-code {
+        width: 100% !important;
       }
-      .bg-img img {
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-        /* transform: translate(0, -3%); */
+
+      .payment-info-wrapper {
+        font-size: 1rem;
       }
+
+      .payment-info-wrapper>h4 {
+        font-size: 1rem;
+      }
+    }
+
+    .bg-img {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -10;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+
+    .bg-img img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      /* transform: translate(0, -3%); */
+    }
+
+    .rules-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 0.5rem;
+      padding-bottom: 0.5rem;
+      border-radius: 8px;
+      border: 2px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .main-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0rem;
+      padding-bottom: 0.5rem;
+      border-radius: 8px;
+      border: 2px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .coordinator {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .contact-details {
+      justify-content: center;
+    }
+
+    .main-body {
+      padding: 1rem;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    input {
+      margin-bottom: 1rem !important;
+    }
+
+    @media (max-width: 600px) {
       .rules-wrapper {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 1.5rem 0.5rem;
-        padding-bottom: 0.5rem;
-        border-radius: 8px;
-        border: 2px solid rgba(0, 0, 0, 0.05);
+        padding: 1rem 0;
+        padding-right: 0.4rem;
       }
 
-      .main-wrapper {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0rem;
-        padding-bottom: 0.5rem;
-        border-radius: 8px;
-        border: 2px solid rgba(0, 0, 0, 0.05);
-      }
-      .coordinator {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        text-align: center;
-      }
-
-      .contact-details {
-        justify-content: center;
+      .rules-wrapper h3 {
+        font-size: 1.5rem;
       }
 
       .main-body {
-        padding: 1rem;
-        width: 100%;
-        margin-bottom: 2rem;
+        padding: 0;
       }
+    }
+  </style>
+</head>
 
-      input {
-        margin-bottom: 1rem !important;
-      }
+<body>
+  <div class="ppsu-logo">
+    <a href="index.html">
+      <img src="images/PPSU White.png" alt="" />
+    </a>
+  </div>
+  <div class="bg-img">
+    <img src="images/ttBg.jpg" />
+  </div>
 
-      @media (max-width: 600px) {
-        .rules-wrapper {
-          padding: 1rem 0;
-          padding-right: 0.4rem;
-        }
-        .rules-wrapper h3 {
-          font-size: 1.5rem;
-        }
-
-        .main-body {
-          padding: 0;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="ppsu-logo">
-      <a href="index.html">
-        <img src="images/PPSU White.png" alt="" />
-      </a>
-    </div>
-    <div class="bg-img">
-      <img src="images/ttBg.jpg" />
-    </div>
-
-    <div class="main-body">
-      <div class="form-wrapper">
-        <h1 style="text-align: center; font-size: 3rem; font-weight: 700">
-          TABLE TENNIS
-        </h1>
-        <br />
-        <br />
-        <div class="rules-wrapper">
-          <div style="width: 100%">
-            <h3 style="margin-left: 1rem">General Instructions</h3>
-            <ul>
-              <li>
-                ID cards issued by school of every team member are compulsory in
-                order to play/participate. If any player does not have an id
-                card, then they need to carry his/her school bonafide
-                certificate.
-              </li>
-              <li>
-                Team should report 30 minutes before the start of the match.
-              </li>
-              <li>
-                Any team later than 10 minutes of the scheduled time will have
-                to forfeit the match.
-              </li>
-              <li>
-                Any team found misbehaving with the referee or the member of the
-                organizing committee will be disqualified.
-              </li>
-              <li>
-                Any team player prior/later found having a fake ID committee’s
-                decision will be final.
-              </li>
-              <li>
-                The referee's decision will be the final decision during the
-                game.
-              </li>
-              <li>
-                In case of a conflict, decisions of the Sports Committee will be
-                considered as final decision.
-              </li>
-              <li>
-                Participants must be under 18 years old, with a birthdate on or
-                after October 29, 2005.
-              </li>
-              <li>
-                Participants must be currently enrolled as students in either a
-                school or a diploma institute.
-              </li>
-              <li>
-                Teams have to play in sports wear as per their respective games.
-              </li>
-              <li>Every Team have to wear same colored jersey with School name on it.</li>
-            </ul>
-          </div>
+  <div class="main-body">
+    <div class="form-wrapper">
+      <h1 style="text-align: center; font-size: 3rem; font-weight: 700">
+        TABLE TENNIS
+      </h1>
+      <br />
+      <br />
+      <div class="rules-wrapper">
+        <div style="width: 100%">
+          <h3 style="margin-left: 1rem">General Instructions</h3>
+          <ul>
+            <li>
+              ID cards issued by school of every team member are compulsory in
+              order to play/participate. If any player does not have an id
+              card, then they need to carry his/her school bonafide
+              certificate.
+            </li>
+            <li>
+              Team should report 30 minutes before the start of the match.
+            </li>
+            <li>
+              Any team later than 10 minutes of the scheduled time will have
+              to forfeit the match.
+            </li>
+            <li>
+              Any team found misbehaving with the referee or the member of the
+              organizing committee will be disqualified.
+            </li>
+            <li>
+              Any team player prior/later found having a fake ID committee’s
+              decision will be final.
+            </li>
+            <li>
+              The referee's decision will be the final decision during the
+              game.
+            </li>
+            <li>
+              In case of a conflict, decisions of the Sports Committee will be
+              considered as final decision.
+            </li>
+            <li>
+              Participants must be under 18 years old, with a birthdate on or
+              after October 29, 2005.
+            </li>
+            <li>
+              Participants must be currently enrolled as students in either a
+              school or a diploma institute.
+            </li>
+            <li>
+              Teams have to play in sports wear as per their respective games.
+            </li>
+            <li>Every Team have to wear same colored jersey with School name on it.</li>
+          </ul>
         </div>
-        <br />
-        <div class="rules-wrapper">
-          <div style="width: 100%">
-            <h3 style="margin-left: 1rem">Event Rules & Instructions</h3>
-            <ul>
-              <li>
-                The rules for table tennis will be according to the rules of
-                I.T.T.F.
-              </li>
-              <li>
-                Each Table-Tennis match will comprise of 5 games:
-                <ul>
-                  <li>1 boys singles</li>
-                  <li>2 girls singles</li>
-                  <li>3 boy’s doubles</li>
-                  <li>4 Girl’s doubles</li>
-                  <li>5 mixed doubles</li>
-                </ul>
-              </li>
-              <li>
-                Each game will consist of 3 sets of 11 points each till quarter
-                finals with service changing sides every 2 points in a game.
-                Semi-finals and finals to be a best of 5 sets in each match.
-              </li>
-              <li>Each player can play max 1 single and 1 doubles match.</li>
-              <li>
-                A maximum of 6 from each team will be allowed to participate in
-                a match.
-              </li>
-              <li>
-                The team winning a greater number of games will be declared as
-                the winner of the match.
-              </li>
-              <li>
-                ‘Dead rubbers’ will not be played in the interests of paucity of
-                time to organize remaining events in the meet.
-              </li>
-              <li>
-                The order of players proposed to play particular games will have
-                to be pre- decided and submitted to the Organizing Committee
-                before the beginning of the match and cannot be changed
-                thereafter.
-              </li>
-              <li>
-                NOTE: In case of tie between 2 teams, the no. of matches won
-                (net of losses) would be considered. If it's still the same then
-                the head-to-head result would be considered.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <br />
-        <div class="main-wrapper">
-          <div style="width: 100%; padding: 1rem">
-            <form
-              action="https://docs.google.com/forms/d/e/1FAIpQLSedSRHcSUHuH69WNpmw18JVmeHzBO8_PhKPFd_NGVjyms3zVQ/formResponse"
-              id="myForm"
-              method="post"
-            >
-              <div class="form-group row">
-                <div class="col-md-12 register-input-wrapper">
-                  <div class="form-title">
-                    <h2>Register Your Team</h2>
-                    <br />
-                    <p class="form-warning">Fields marked as * are Required</p>
-                  </div>
-
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-school"
-                      >
-                        <path d="m4 6 8-4 8 4" />
-                        <path
-                          d="m18 10 4 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8l4-2"
-                        />
-                        <path d="M14 22v-4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v4" />
-                        <path d="M18 5v17" />
-                        <path d="M6 5v17" />
-                        <circle cx="12" cy="9" r="2" />
-                      </svg>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="School name"
-                      name="entry.83907517"
-                    />
-                  </div>
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-user-circle-2"
-                      >
-                        <path d="M18 20a6 6 0 0 0-12 0" />
-                        <circle cx="12" cy="10" r="4" />
-                        <circle cx="12" cy="12" r="10" />
-                      </svg>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Sports Coordinator's Name"
-                      name="entry.1016957437"
-                    />
-                  </div>
-
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-mail"
-                      >
-                        <rect width="20" height="16" x="2" y="4" rx="2" />
-                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                      </svg>
-                    </div>
-                    <input
-                      type="email"
-                      class="form-control"
-                      required
-                      placeholder="Sports Coordinator's Email"
-                      name="entry.365676591"
-                    />
-                  </div>
-
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-phone"
-                      >
-                        <path
-                          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                        />
-                      </svg>
-                    </div>
-
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Sports Coordinator's Contact No."
-                      name="entry.1712126662"
-                    />
-                  </div>
-
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-backpack"
-                      >
-                        <path
-                          d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
-                        />
-                        <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
-                        <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
-                        <path d="M8 10h8" />
-                        <path d="M8 18h8" />
-                      </svg>
-
-                      <p>1</p>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Member 1's Name"
-                      name="entry.2079074675"
-                    />
-                  </div>
-
-                  <div class="radio-btn-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-person-standing"
-                      >
-                        <circle cx="12" cy="5" r="1" />
-                        <path d="m9 20 3-6 3 6" />
-                        <path d="m6 8 6 2 6-2" />
-                        <path d="M12 10v4" />
-                      </svg>
-                    </div>
-                    <div class="radio-btn">
-                      <p class="required">*</p>
-                      <p>Member 1's gender</p>
-                      <div>
-                        <input
-                          type="radio"
-                          style="margin-top: 0.5rem"
-                          name="entry.50025977"
-                          value="Male"
-                        />
-                          <label for="css">Male</label>
-                      </div>
-                      <div>
-                        <input
-                          type="radio"
-                          style="margin-top: 0.5rem"
-                          name="entry.50025977"
-                          value="Female"
-                        />
-                          <label for="css">Female</label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-presentation"
-                      >
-                        <path d="M2 3h20" />
-                        <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" />
-                        <path d="m7 21 5-5 5 5" />
-                      </svg>
-
-                      <p>1</p>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Member 1's Class"
-                      name="entry.963113088"
-                    />
-                  </div>
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-calendar-days"
-                      >
-                        <rect
-                          width="18"
-                          height="18"
-                          x="3"
-                          y="4"
-                          rx="2"
-                          ry="2"
-                        />
-                        <line x1="16" x2="16" y1="2" y2="6" />
-                        <line x1="8" x2="8" y1="2" y2="6" />
-                        <line x1="3" x2="21" y1="10" y2="10" />
-                        <path d="M8 14h.01" />
-                        <path d="M12 14h.01" />
-                        <path d="M16 14h.01" />
-                        <path d="M8 18h.01" />
-                        <path d="M12 18h.01" />
-                        <path d="M16 18h.01" />
-                      </svg>
-
-                      <p>1</p>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Member 1's Date of Birth (DD-MM-YYYY)"
-                      name="entry.1652447252"
-                    />
-                  </div>
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-phone"
-                      >
-                        <path
-                          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                        />
-                      </svg>
-
-                      <p>1</p>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Member 1's Contact Number"
-                      name="entry.1116870078"
-                    />
-                  </div>
-
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-backpack"
-                      >
-                        <path
-                          d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
-                        />
-                        <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
-                        <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
-                        <path d="M8 10h8" />
-                        <path d="M8 18h8" />
-                      </svg>
-
-                      <p>2</p>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Member 2's Name"
-                      name="entry.1151632990"
-                    />
-                  </div>
-
-                  <div class="radio-btn-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-person-standing"
-                      >
-                        <circle cx="12" cy="5" r="1" />
-                        <path d="m9 20 3-6 3 6" />
-                        <path d="m6 8 6 2 6-2" />
-                        <path d="M12 10v4" />
-                      </svg>
-                    </div>
-                    <div class="radio-btn">
-                      <p class="required">*</p>
-                      <p>Member 2's gender</p>
-                      <div>
-                        <input
-                          type="radio"
-                          style="margin-top: 0.5rem"
-                          name="entry.141436678"
-                          value="Male"
-                        />
-                          <label for="css">Male</label>
-                      </div>
-                      <div>
-                        <input
-                          type="radio"
-                          style="margin-top: 0.5rem"
-                          name="entry.141436678"
-                          value="Female"
-                        />
-                          <label for="css">Female</label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-presentation"
-                      >
-                        <path d="M2 3h20" />
-                        <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" />
-                        <path d="m7 21 5-5 5 5" />
-                      </svg>
-
-                      <p>2</p>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Member 2's Class"
-                      name="entry.1268509135"
-                    />
-                  </div>
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-calendar-days"
-                      >
-                        <rect
-                          width="18"
-                          height="18"
-                          x="3"
-                          y="4"
-                          rx="2"
-                          ry="2"
-                        />
-                        <line x1="16" x2="16" y1="2" y2="6" />
-                        <line x1="8" x2="8" y1="2" y2="6" />
-                        <line x1="3" x2="21" y1="10" y2="10" />
-                        <path d="M8 14h.01" />
-                        <path d="M12 14h.01" />
-                        <path d="M16 14h.01" />
-                        <path d="M8 18h.01" />
-                        <path d="M12 18h.01" />
-                        <path d="M16 18h.01" />
-                      </svg>
-
-                      <p>2</p>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Member 2's Date of Birth (DD-MM-YYYY)"
-                      name="entry.1242504134"
-                    />
-                  </div>
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-phone"
-                      >
-                        <path
-                          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                        />
-                      </svg>
-
-                      <p>2</p>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Member 2's Contact Number"
-                      name="entry.934699482"
-                    />
-                  </div>
-
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-backpack"
-                      >
-                        <path
-                          d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
-                        />
-                        <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
-                        <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
-                        <path d="M8 10h8" />
-                        <path d="M8 18h8" />
-                      </svg>
-
-                      <p>3</p>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Member 3's Name"
-                      name="entry.550900707"
-                    />
-                  </div>
-
-                  <div class="radio-btn-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-person-standing"
-                      >
-                        <circle cx="12" cy="5" r="1" />
-                        <path d="m9 20 3-6 3 6" />
-                        <path d="m6 8 6 2 6-2" />
-                        <path d="M12 10v4" />
-                      </svg>
-                    </div>
-                    <div class="radio-btn">
-                      <p class="required">*</p>
-                      <p>Member 3's gender</p>
-                      <div>
-                        <input
-                          type="radio"
-                          style="margin-top: 0.5rem"
-                          name="entry.1676264348"
-                          value="Male"
-                        />
-                          <label for="css">Male</label>
-                      </div>
-                      <div>
-                        <input
-                          type="radio"
-                          style="margin-top: 0.5rem"
-                          name="entry.1676264348"
-                          value="Female"
-                        />
-                          <label for="css">Female</label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-presentation"
-                      >
-                        <path d="M2 3h20" />
-                        <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" />
-                        <path d="m7 21 5-5 5 5" />
-                      </svg>
-
-                      <p>3</p>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Member 3's Class"
-                      name="entry.156374903"
-                    />
-                  </div>
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-calendar-days"
-                      >
-                        <rect
-                          width="18"
-                          height="18"
-                          x="3"
-                          y="4"
-                          rx="2"
-                          ry="2"
-                        />
-                        <line x1="16" x2="16" y1="2" y2="6" />
-                        <line x1="8" x2="8" y1="2" y2="6" />
-                        <line x1="3" x2="21" y1="10" y2="10" />
-                        <path d="M8 14h.01" />
-                        <path d="M12 14h.01" />
-                        <path d="M16 14h.01" />
-                        <path d="M8 18h.01" />
-                        <path d="M12 18h.01" />
-                        <path d="M16 18h.01" />
-                      </svg>
-
-                      <p>3</p>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Member 3's Date of Birth (DD-MM-YYYY)"
-                      name="entry.1817539418"
-                    />
-                  </div>
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-phone"
-                      >
-                        <path
-                          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                        />
-                      </svg>
-
-                      <p>3</p>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Member 3's Contact Number"
-                      name="entry.94200819"
-                    />
-                  </div>
-
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-backpack"
-                      >
-                        <path
-                          d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
-                        />
-                        <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
-                        <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
-                        <path d="M8 10h8" />
-                        <path d="M8 18h8" />
-                      </svg>
-
-                      <p>4</p>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Member 4's Name"
-                      name="entry.959606694"
-                    />
-                  </div>
-
-                  <div class="radio-btn-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-person-standing"
-                      >
-                        <circle cx="12" cy="5" r="1" />
-                        <path d="m9 20 3-6 3 6" />
-                        <path d="m6 8 6 2 6-2" />
-                        <path d="M12 10v4" />
-                      </svg>
-                    </div>
-                    <div class="radio-btn">
-                      <p class="required">*</p>
-                      <p>Member 4's gender</p>
-                      <div>
-                        <input
-                          type="radio"
-                          style="margin-top: 0.5rem"
-                          name="entry.657994672"
-                          value="Male"
-                        />
-                          <label for="css">Male</label>
-                      </div>
-                      <div>
-                        <input
-                          type="radio"
-                          style="margin-top: 0.5rem"
-                          name="entry.657994672"
-                          value="Female"
-                        />
-                          <label for="css">Female</label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-presentation"
-                      >
-                        <path d="M2 3h20" />
-                        <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" />
-                        <path d="m7 21 5-5 5 5" />
-                      </svg>
-
-                      <p>4</p>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Member 4's Class"
-                      name="entry.2039345684"
-                    />
-                  </div>
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-calendar-days"
-                      >
-                        <rect
-                          width="18"
-                          height="18"
-                          x="3"
-                          y="4"
-                          rx="2"
-                          ry="2"
-                        />
-                        <line x1="16" x2="16" y1="2" y2="6" />
-                        <line x1="8" x2="8" y1="2" y2="6" />
-                        <line x1="3" x2="21" y1="10" y2="10" />
-                        <path d="M8 14h.01" />
-                        <path d="M12 14h.01" />
-                        <path d="M16 14h.01" />
-                        <path d="M8 18h.01" />
-                        <path d="M12 18h.01" />
-                        <path d="M16 18h.01" />
-                      </svg>
-
-                      <p>4</p>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Member 4's Date of Birth (DD-MM-YYYY)"
-                      name="entry.160612238"
-                    />
-                  </div>
-                  <div class="register-input-wrapper">
-                    <p class="required">*</p>
-                    <div class="input-icon">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-phone"
-                      >
-                        <path
-                          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                        />
-                      </svg>
-
-                      <p>4</p>
-                    </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      placeholder="Member 4's Contact Number"
-                      name="entry.945021880"
-                    />
-                  </div>
-                </div>
-              </div>
-              <p style="color: #ebc633; text-align: center">
-                Before registering players, it is requested to register
-                the school first.
-              </p>
-              <div class="">
-                <div style="width: 100%">
-                  <!-- <a href="formsubmitted.html"> -->
-                  <input
-                    type="submit"
-                    class="btn btn-primary py-3 px-5 btn-block"
-                    value="COMPLETE REGISTRATION"
-                    id="submitBtn"
-                  />
-                  <!-- </a> -->
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-        &nbsp;
       </div>
-    </div>
-    <script>
-      document
-        .getElementById("myForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-          var formData = new FormData(this);
+      <br />
+      <div class="rules-wrapper">
+        <div style="width: 100%">
+          <h3 style="margin-left: 1rem">Event Rules & Instructions</h3>
+          <ul>
+            <li>
+              The rules for table tennis will be according to the rules of
+              I.T.T.F.
+            </li>
+            <li>
+              Each Table-Tennis match will comprise of 5 games:
+              <ul>
+                <li>1 boys singles</li>
+                <li>2 girls singles</li>
+                <li>3 boy’s doubles</li>
+                <li>4 Girl’s doubles</li>
+                <li>5 mixed doubles</li>
+              </ul>
+            </li>
+            <li>
+              Each game will consist of 3 sets of 11 points each till quarter
+              finals with service changing sides every 2 points in a game.
+              Semi-finals and finals to be a best of 5 sets in each match.
+            </li>
+            <li>Each player can play max 1 single and 1 doubles match.</li>
+            <li>
+              A maximum of 6 from each team will be allowed to participate in
+              a match.
+            </li>
+            <li>
+              The team winning a greater number of games will be declared as
+              the winner of the match.
+            </li>
+            <li>
+              ‘Dead rubbers’ will not be played in the interests of paucity of
+              time to organize remaining events in the meet.
+            </li>
+            <li>
+              The order of players proposed to play particular games will have
+              to be pre- decided and submitted to the Organizing Committee
+              before the beginning of the match and cannot be changed
+              thereafter.
+            </li>
+            <li>
+              NOTE: In case of tie between 2 teams, the no. of matches won
+              (net of losses) would be considered. If it's still the same then
+              the head-to-head result would be considered.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <br />
+      <div class="main-wrapper">
+        <div style="width: 100%; padding: 1rem">
+          <form  
+            action="https://docs.google.com/forms/d/e/1FAIpQLSedSRHcSUHuH69WNpmw18JVmeHzBO8_PhKPFd_NGVjyms3zVQ/formResponse"
+            id="myForm" method="post">
+            <div class="form-group row">
+              <div class="col-md-12 register-input-wrapper">
+                <div class="form-title">
+                  <h2>Register Your Team</h2>
+                  <br />
+                  <p class="form-warning">Fields marked as * are Required</p>
+                </div>
 
-          fetch(this.action, {
-            method: this.method,
-            body: formData,
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-school">
+                      <path d="m4 6 8-4 8 4" />
+                      <path d="m18 10 4 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8l4-2" />
+                      <path d="M14 22v-4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v4" />
+                      <path d="M18 5v17" />
+                      <path d="M6 5v17" />
+                      <circle cx="12" cy="9" r="2" />
+                    </svg>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="School name" name="entry.83907517" />
+                </div>
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-user-circle-2">
+                      <path d="M18 20a6 6 0 0 0-12 0" />
+                      <circle cx="12" cy="10" r="4" />
+                      <circle cx="12" cy="12" r="10" />
+                    </svg>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="Sports Coordinator's Name"
+                    name="entry.1016957437" />
+                </div>
+
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-mail">
+                      <rect width="20" height="16" x="2" y="4" rx="2" />
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
+                  </div>
+                  <input type="email" class="form-control" required placeholder="Sports Coordinator's Email"
+                    name="entry.365676591" />
+                </div>
+
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-phone">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                  </div>
+
+                  <input type="text" class="form-control" required placeholder="Sports Coordinator's Contact No."
+                    name="entry.1712126662" />
+                </div>
+
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-backpack">
+                      <path d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
+                      <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                      <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+                      <path d="M8 10h8" />
+                      <path d="M8 18h8" />
+                    </svg>
+
+                    <p>1</p>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="Member 1's Name"
+                    name="entry.2079074675" />
+                </div>
+
+                <div class="radio-btn-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-person-standing">
+                      <circle cx="12" cy="5" r="1" />
+                      <path d="m9 20 3-6 3 6" />
+                      <path d="m6 8 6 2 6-2" />
+                      <path d="M12 10v4" />
+                    </svg>
+                  </div>
+                  <div class="radio-btn">
+                    <p class="required">*</p>
+                    <p>Member 1's gender</p>
+                    <div>
+                      <input type="radio" style="margin-top: 0.5rem" name="entry.50025977" value="Male" />
+                        <label for="css">Male</label>
+                    </div>
+                    <div>
+                      <input type="radio" style="margin-top: 0.5rem" name="entry.50025977" value="Female" />
+                        <label for="css">Female</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-presentation">
+                      <path d="M2 3h20" />
+                      <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" />
+                      <path d="m7 21 5-5 5 5" />
+                    </svg>
+
+                    <p>1</p>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="Member 1's Class"
+                    name="entry.963113088" />
+                </div>
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-calendar-days">
+                      <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                      <line x1="16" x2="16" y1="2" y2="6" />
+                      <line x1="8" x2="8" y1="2" y2="6" />
+                      <line x1="3" x2="21" y1="10" y2="10" />
+                      <path d="M8 14h.01" />
+                      <path d="M12 14h.01" />
+                      <path d="M16 14h.01" />
+                      <path d="M8 18h.01" />
+                      <path d="M12 18h.01" />
+                      <path d="M16 18h.01" />
+                    </svg>
+
+                    <p>1</p>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="Member 1's Date of Birth (DD-MM-YYYY)"
+                    name="entry.1652447252" />
+                </div>
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-phone">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+
+                    <p>1</p>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="Member 1's Contact Number"
+                    name="entry.1116870078" />
+                </div>
+
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-backpack">
+                      <path d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
+                      <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                      <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+                      <path d="M8 10h8" />
+                      <path d="M8 18h8" />
+                    </svg>
+
+                    <p>2</p>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="Member 2's Name"
+                    name="entry.1151632990" />
+                </div>
+
+                <div class="radio-btn-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-person-standing">
+                      <circle cx="12" cy="5" r="1" />
+                      <path d="m9 20 3-6 3 6" />
+                      <path d="m6 8 6 2 6-2" />
+                      <path d="M12 10v4" />
+                    </svg>
+                  </div>
+                  <div class="radio-btn">
+                    <p class="required">*</p>
+                    <p>Member 2's gender</p>
+                    <div>
+                      <input type="radio" style="margin-top: 0.5rem" name="entry.141436678" value="Male" />
+                        <label for="css">Male</label>
+                    </div>
+                    <div>
+                      <input type="radio" style="margin-top: 0.5rem" name="entry.141436678" value="Female" />
+                        <label for="css">Female</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-presentation">
+                      <path d="M2 3h20" />
+                      <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" />
+                      <path d="m7 21 5-5 5 5" />
+                    </svg>
+
+                    <p>2</p>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="Member 2's Class"
+                    name="entry.1268509135" />
+                </div>
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-calendar-days">
+                      <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                      <line x1="16" x2="16" y1="2" y2="6" />
+                      <line x1="8" x2="8" y1="2" y2="6" />
+                      <line x1="3" x2="21" y1="10" y2="10" />
+                      <path d="M8 14h.01" />
+                      <path d="M12 14h.01" />
+                      <path d="M16 14h.01" />
+                      <path d="M8 18h.01" />
+                      <path d="M12 18h.01" />
+                      <path d="M16 18h.01" />
+                    </svg>
+
+                    <p>2</p>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="Member 2's Date of Birth (DD-MM-YYYY)"
+                    name="entry.1242504134" />
+                </div>
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-phone">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+
+                    <p>2</p>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="Member 2's Contact Number"
+                    name="entry.934699482" />
+                </div>
+
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-backpack">
+                      <path d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
+                      <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                      <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+                      <path d="M8 10h8" />
+                      <path d="M8 18h8" />
+                    </svg>
+
+                    <p>3</p>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="Member 3's Name"
+                    name="entry.550900707" />
+                </div>
+
+                <div class="radio-btn-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-person-standing">
+                      <circle cx="12" cy="5" r="1" />
+                      <path d="m9 20 3-6 3 6" />
+                      <path d="m6 8 6 2 6-2" />
+                      <path d="M12 10v4" />
+                    </svg>
+                  </div>
+                  <div class="radio-btn">
+                    <p class="required">*</p>
+                    <p>Member 3's gender</p>
+                    <div>
+                      <input type="radio" style="margin-top: 0.5rem" name="entry.1676264348" value="Male" />
+                        <label for="css">Male</label>
+                    </div>
+                    <div>
+                      <input type="radio" style="margin-top: 0.5rem" name="entry.1676264348" value="Female" />
+                        <label for="css">Female</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-presentation">
+                      <path d="M2 3h20" />
+                      <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" />
+                      <path d="m7 21 5-5 5 5" />
+                    </svg>
+
+                    <p>3</p>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="Member 3's Class"
+                    name="entry.156374903" />
+                </div>
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-calendar-days">
+                      <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                      <line x1="16" x2="16" y1="2" y2="6" />
+                      <line x1="8" x2="8" y1="2" y2="6" />
+                      <line x1="3" x2="21" y1="10" y2="10" />
+                      <path d="M8 14h.01" />
+                      <path d="M12 14h.01" />
+                      <path d="M16 14h.01" />
+                      <path d="M8 18h.01" />
+                      <path d="M12 18h.01" />
+                      <path d="M16 18h.01" />
+                    </svg>
+
+                    <p>3</p>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="Member 3's Date of Birth (DD-MM-YYYY)"
+                    name="entry.1817539418" />
+                </div>
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-phone">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+
+                    <p>3</p>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="Member 3's Contact Number"
+                    name="entry.94200819" />
+                </div>
+
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-backpack">
+                      <path d="M4 20V10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
+                      <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
+                      <path d="M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5" />
+                      <path d="M8 10h8" />
+                      <path d="M8 18h8" />
+                    </svg>
+
+                    <p>4</p>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="Member 4's Name"
+                    name="entry.959606694" />
+                </div>
+
+                <div class="radio-btn-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-person-standing">
+                      <circle cx="12" cy="5" r="1" />
+                      <path d="m9 20 3-6 3 6" />
+                      <path d="m6 8 6 2 6-2" />
+                      <path d="M12 10v4" />
+                    </svg>
+                  </div>
+                  <div class="radio-btn">
+                    <p class="required">*</p>
+                    <p>Member 4's gender</p>
+                    <div>
+                      <input type="radio" style="margin-top: 0.5rem" name="entry.657994672" value="Male" />
+                        <label for="css">Male</label>
+                    </div>
+                    <div>
+                      <input type="radio" style="margin-top: 0.5rem" name="entry.657994672" value="Female" />
+                        <label for="css">Female</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-presentation">
+                      <path d="M2 3h20" />
+                      <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" />
+                      <path d="m7 21 5-5 5 5" />
+                    </svg>
+
+                    <p>4</p>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="Member 4's Class"
+                    name="entry.2039345684" />
+                </div>
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-calendar-days">
+                      <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                      <line x1="16" x2="16" y1="2" y2="6" />
+                      <line x1="8" x2="8" y1="2" y2="6" />
+                      <line x1="3" x2="21" y1="10" y2="10" />
+                      <path d="M8 14h.01" />
+                      <path d="M12 14h.01" />
+                      <path d="M16 14h.01" />
+                      <path d="M8 18h.01" />
+                      <path d="M12 18h.01" />
+                      <path d="M16 18h.01" />
+                    </svg>
+
+                    <p>4</p>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="Member 4's Date of Birth (DD-MM-YYYY)"
+                    name="entry.160612238" />
+                </div>
+                <div class="register-input-wrapper">
+                  <p class="required">*</p>
+                  <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-phone">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+
+                    <p>4</p>
+                  </div>
+                  <input type="text" class="form-control" required placeholder="Member 4's Contact Number"
+                    name="entry.945021880" />
+                </div>
+              </div>
+            </div>
+            <p style="color: #ebc633; text-align: center">
+              Before registering players, it is requested to register
+              the school first.
+            </p>
+            <div class="">
+              <div style="width: 100%">
+                <!-- <a href="formsubmitted.html"> -->
+                <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="COMPLETE REGISTRATION"
+                  id="submitBtn" />
+                <!-- </a> -->
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      &nbsp;
+    </div>
+  </div>
+  <script>
+    document
+      .getElementById("myForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+        var formData = new FormData(this);
+
+        fetch(this.action, {
+          method: this.method,
+          body: formData,
+        })
+          .then(function (response) {
+            // Handle the response here (e.g., show a thank-you message)
+            console.log("Form submitted successfully!");
+            window.location.href = "formsubmitted.html";
           })
-            .then(function (response) {
-              // Handle the response here (e.g., show a thank-you message)
-              console.log("Form submitted successfully!");
-              window.location.href = "formsubmitted.html";
-            })
-            .catch(function (error) {
-              window.location.href = "formsubmitted.html";
-              // Handle errors if the submission fails
-              console.error("Form submission error:", error);
-            });
-        });
-    </script>
-  </body>
+          .catch(function (error) {
+            window.location.href = "formsubmitted.html";
+            // Handle errors if the submission fails
+            console.error("Form submission error:", error);
+          });
+      });
+  </script>
+</body>
+
 </html>
