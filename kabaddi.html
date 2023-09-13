@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration</title>
+    <title>Kabaddi | Registration</title>
 
-    <link rel="shortcut icon" href="ftco-32x32.png" />
+        <link rel="shortcut icon" href="images/marvellogo.png" />
+
 
     <link
       href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900"
@@ -305,10 +306,12 @@
         <br />
         <div class="main-wrapper">
           <div style="width: 100%; padding: 1rem">
-            <form
+            <form 
               action="https://docs.google.com/forms/d/e/1FAIpQLSerf-NVCvUtQAPyAikiBO5aqWdSCffzbAWstBYd6bq2qjKImA/formResponse"
               id="myForm"
               method="post"
+              type="submit"
+              value="Submit"
             >
               <div class="form-group row">
                 <div class="col-md-12 register-input-wrapper">
@@ -2152,6 +2155,19 @@
               console.error("Form submission error:", error);
             });
         });
+
+
+        $('#myForm').submit(function(){
+
+$("#submitBtn", this)
+
+  .html("Please Wait...")
+
+  .attr('disabled', 'disabled');
+
+return true;
+
+});
     </script>
   </body>
 </html>
