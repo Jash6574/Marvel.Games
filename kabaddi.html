@@ -306,10 +306,12 @@
         <br />
         <div class="main-wrapper">
           <div style="width: 100%; padding: 1rem">
-            <form
+            <form 
               action="https://docs.google.com/forms/d/e/1FAIpQLSerf-NVCvUtQAPyAikiBO5aqWdSCffzbAWstBYd6bq2qjKImA/formResponse"
               id="myForm"
               method="post"
+              type="submit"
+              value="Submit"
             >
               <div class="form-group row">
                 <div class="col-md-12 register-input-wrapper">
@@ -2153,6 +2155,19 @@
               console.error("Form submission error:", error);
             });
         });
+
+
+        $('#myForm').submit(function(){
+
+$("#submitBtn", this)
+
+  .html("Please Wait...")
+
+  .attr('disabled', 'disabled');
+
+return true;
+
+});
     </script>
   </body>
 </html>

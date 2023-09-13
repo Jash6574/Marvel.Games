@@ -1757,6 +1757,18 @@
               console.error("Form submission error:", error);
             });
         });
+
+        $('#myForm').submit(function(){
+
+$("#submitBtn", this)
+
+  .html("Please Wait...")
+
+  .attr('disabled', 'disabled');
+
+return true;
+
+});
     </script>
   </body>
 </html>
