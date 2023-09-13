@@ -1607,6 +1607,7 @@ h5,
   margin-bottom: 1rem;
   display: flex;
   gap: 1rem;
+  position: relative;
 }
 .radio-btn {
   width: 100%;
@@ -1631,4 +1632,16 @@ h5,
 
 .form-warning {
   font-size: 01rem;
+  color: tomato;
+}
+
+.required {
+  position: absolute;
+  color: tomato;
+  background: #fff;
+  font-size: 1.5rem;
+  left: 10px;
+  top: -15px;
+  width: 20px;
+  text-align: center;
 }
