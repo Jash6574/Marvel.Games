@@ -1564,7 +1564,7 @@ h5,
 }
 
 .register-input-wrapper input::placeholder,
-.register-input-wrapper input[type=date] {
+.register-input-wrapper input[type=date]::placeholder {
   color: #b2b2b2;
 }
 
