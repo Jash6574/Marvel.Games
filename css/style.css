@@ -1518,6 +1518,8 @@ h5,
   align-items: center;
   overflow: hidden;
   flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
 
   /* padding: 0.3rem 0; */
 }
@@ -1528,7 +1530,7 @@ h5,
     justify-content: center;
     gap: 0.5rem;
     word-wrap: break-word;
-    word-break: break-all;
+    /* word-break: break-all; */
     text-align: center;
   }
   .contact-details a {
@@ -1642,7 +1644,7 @@ h5,
   color: tomato;
   background: #fff;
   font-size: 1.5rem;
-  left: 10px;
+  left: 25px;
   top: -15px;
   width: 20px;
   text-align: center;
@@ -1669,7 +1671,7 @@ h5,
 .styled-table td {
   text-align: center;
 
-    padding: 12px 15px;
+  padding: 12px 15px;
 }
 
 .styled-table tbody tr {
