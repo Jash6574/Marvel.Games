@@ -309,6 +309,8 @@
               action="https://docs.google.com/forms/d/e/1FAIpQLSfMEMMRcU5UcnpJGxL1NC_mJKZfAojoK6aaiBzeAxwVk58aag/formResponse"
               id="myForm"
               method="post"
+
+              onsubmit="myButton.disabled = true; return true;"
             >
               <div class="form-group row">
                 <div class="col-md-12 register-input-wrapper">
@@ -2116,7 +2118,7 @@
                     type="submit"
                     class="btn btn-primary py-3 px-5 btn-block"
                     value="COMPLETE REGISTRATION"
-                    id="submitBtn"
+                    id="submitBtn",name="myButton"
                   />
                   <!-- </a> -->
                 </div>

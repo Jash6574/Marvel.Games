@@ -318,6 +318,8 @@
               action="https://docs.google.com/forms/d/e/1FAIpQLSerf-NVCvUtQAPyAikiBO5aqWdSCffzbAWstBYd6bq2qjKImA/formResponse"
               id="myForm"
               method="post"
+
+              onsubmit="myButton.disabled = true; return true;"
               type="submit"
               value="Submit"
             >
@@ -2130,7 +2132,7 @@
                     type="submit"
                     class="btn btn-primary py-3 px-5 btn-block"
                     value="COMPLETE REGISTRATION"
-                    id="submitBtn"
+                    id="submitBtn",name="myButton"
                   />
                   <!-- </a> -->
                 </div>

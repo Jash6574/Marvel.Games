@@ -182,6 +182,8 @@
             method="POST"
             class="col-md-11"
             id="myForm"
+
+            onsubmit="myButton.disable = true;return true;"
           >
             <div class="form-title">
               <h2>Register your School for the ppsu's Marvel Games</h2>
@@ -510,7 +512,7 @@
                   type="submit"
                   class="btn btn-primary py-3 px-5 btn-block"
                   value="COMPLETE REGISTRATION"
-                  id="submitBtn"
+                  id="submitBtn",name="myButton"
                 />
                 <!-- </a> -->
               </div>
