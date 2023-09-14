@@ -1128,15 +1128,18 @@ h5,
 }
 
 .schedule-wrap {
-  padding: 40px;
+  /* padding: 20px; */
+  padding-left: 40px;
+  padding: 18px;
+  /* padding-bottom: 0; */
   background: #f23a2e;
   max-width: 600px;
   position: relative;
   z-index: 9;
   color: white;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-65%);
+  -ms-transform: translateY(-65%);
+  transform: translateY(-65%);
 }
 
 .schedule-wrap:before {
