@@ -29,6 +29,29 @@ body {
   width: 100%;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 18px;
+  /* border: 3px solid white; */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f23a2e;
+  border: 3.5px solid #f0f0f0;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #d92417;
+}
+
 ::-moz-selection {
   background: #000;
   color: #fff;
@@ -1107,7 +1130,7 @@ h5,
 .schedule-wrap {
   padding: 40px;
   background: #f23a2e;
-  max-width: 700px;
+  max-width: 600px;
   position: relative;
   z-index: 9;
   color: white;
